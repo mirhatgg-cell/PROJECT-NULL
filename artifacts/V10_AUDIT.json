@@ -1,0 +1,1804 @@
+{
+  "result": "PASS",
+  "validation": "Static XML and conservative oriented bounds; no Roblox Studio execution",
+  "source_sha256": "8664135908a138cd4c8933047b38298713f5e2245ed1ed3fb68a8642f46c12c3",
+  "target_sha256": "6c7cd75d14888d070421008fd3e4488be3657160e49d4c08064af35cacb0e195",
+  "protected_v9_instances": 9635,
+  "modified_v9_instances": [],
+  "removed_v9_instances": [],
+  "reparented_v9_instances": [],
+  "new_instances": 1294,
+  "new_parts": 684,
+  "new_part_roles": {
+    "housing": 148,
+    "panel": 21,
+    "structure": 97,
+    "internal": 169,
+    "control": 34,
+    "detail": 215
+  },
+  "new_primary_colliders": 266,
+  "registered_cavities": 21,
+  "cavities": [
+    {
+      "model": "RBX0000000000000000000000007000003F",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/ShiftRecords/ServiceableTerminalCase",
+      "internal_scope": "RBX0000000000000000000000007000003F",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000018D",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/ArchiveOfWithdrawnForms",
+      "internal_scope": "RBX0000000000000000000000007000018D",
+      "internal_parts_inside": 12,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700001DB",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/P01_OperatorTerminal/ServiceableTerminalCase",
+      "internal_scope": "RBX000000000000000000000000700001DB",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000A6C",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/P05_BoundaryTerminal/ServiceableTerminalCase",
+      "internal_scope": "RBX00000000000000000000000070000A6C",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000AA1",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/IndependentReferenceMeter",
+      "internal_scope": "RBX00000000000000000000000070000AA1",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000AEF",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/PatientBelongingsCart/PersonalPropertyCase",
+      "internal_scope": "RBX00000000000000000000000070000AEF",
+      "internal_parts_inside": 2,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000B00",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/PatientBelongingsCart/PersonalPropertyCase",
+      "internal_scope": "RBX00000000000000000000000070000B00",
+      "internal_parts_inside": 2,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000B2D",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E06_MedicalRecords/FirstAidSupplyCase",
+      "internal_scope": "RBX00000000000000000000000070000B2D",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000B5E",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E07_TimelineAndReconstruction/P03_ReconstructionTerminal/ServiceableTerminalCase",
+      "internal_scope": "RBX00000000000000000000000070000B5E",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000BC0",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/FilterAndRepairBench/FilterStockCabinet",
+      "internal_scope": "RBX00000000000000000000000070000BC0",
+      "internal_parts_inside": 16,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000BE7",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/FilterAndRepairBench/OpenableMaintenanceModule",
+      "internal_scope": "RBX00000000000000000000000070000BE7",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000C16",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E09_QuarantinedHardware/QuarantineExaminationBench/WithdrawnDriver",
+      "internal_scope": "RBX00000000000000000000000070000C16",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000C44",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PerceptionTerminal/ServiceableTerminalCase",
+      "internal_scope": "RBX00000000000000000000000070000C44",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000CBF",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E13_WithdrawnGeneration/LegacyRecordsCabinet",
+      "internal_scope": "RBX00000000000000000000000070000CBF",
+      "internal_parts_inside": 12,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000D01",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E13_WithdrawnGeneration/CurrentRecordsCabinet",
+      "internal_scope": "RBX00000000000000000000000070000D01",
+      "internal_parts_inside": 12,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000D50",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E13_WithdrawnGeneration/SpareIndependentSensor",
+      "internal_scope": "RBX00000000000000000000000070000D50",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000D63",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E13_WithdrawnGeneration/SpareIndependentSensor",
+      "internal_scope": "RBX00000000000000000000000070000D63",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000D79",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/P04_ObserverTerminal/ServiceableTerminalCase",
+      "internal_scope": "RBX00000000000000000000000070000D79",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000DAF",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/CoolingControl/ServiceableTerminalCase",
+      "internal_scope": "RBX00000000000000000000000070000DAF",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000DEF",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/Physical_Protocol_Feedback_V10/P04_OpticalObserver",
+      "internal_scope": "RBX00000000000000000000000070000DEF",
+      "internal_parts_inside": 19,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000E27",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/Physical_Protocol_Feedback_V10/P01_SignalDriver",
+      "internal_scope": "RBX00000000000000000000000070000E27",
+      "internal_parts_inside": 7,
+      "filled_collision_proxies": []
+    }
+  ],
+  "standing_body_routes": [
+    {
+      "name": "E03_south_approach",
+      "bounds": [
+        [
+          -1.25,
+          1.25
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -22,
+          -7
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E06_central_route",
+      "bounds": [
+        [
+          58.6,
+          61.4
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -68.3,
+          -47.7
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E07_working_aisle",
+      "bounds": [
+        [
+          -39.65,
+          -36.25
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -54.8,
+          -44.5
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E10_central_route",
+      "bounds": [
+        [
+          152.6,
+          155.4
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -33.8,
+          33.8
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E16_entry_approach",
+      "bounds": [
+        [
+          -1.35,
+          1.35
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          52.5,
+          61.0
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E01_central_preparation_route",
+      "bounds": [
+        [
+          -1.35,
+          1.35
+        ],
+        [
+          -63,
+          -58.5
+        ],
+        [
+          -74.0,
+          -50.0
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E04_southern_operator_route",
+      "bounds": [
+        [
+          -58.8,
+          -27.0
+        ],
+        [
+          -63,
+          -58.5
+        ],
+        [
+          -6.3,
+          -3.5
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E12_control_entry_route",
+      "bounds": [
+        [
+          201.35,
+          204.05
+        ],
+        [
+          -63,
+          -58.5
+        ],
+        [
+          -10.2,
+          8.5
+        ]
+      ],
+      "obstructions": []
+    }
+  ],
+  "existing_click_targets_checked": 195,
+  "existing_click_target_overlaps": [],
+  "new_vs_existing_physical_intersections": [
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000316",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/ELEC_SignedRepair/WallStandOff",
+        "name": "WallStandOff",
+        "class": "Part",
+        "center": [
+          -50.7,
+          -51.6,
+          11.25
+        ],
+        "size": [
+          0.13,
+          0.13,
+          0.55
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000700000C3",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Visual_Detail_V7/E04_Operator_Detail/AcousticWallAndDocumentation/AcousticFrame",
+        "name": "AcousticFrame",
+        "class": "Part",
+        "center": [
+          -53.0,
+          -53.0,
+          11.28
+        ],
+        "size": [
+          5.15,
+          7.8,
+          0.24
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.34,
+      "mounting_reason": "Repair-tray standoff anchors into an existing wall or acoustic-panel mounting layer."
+    },
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000316",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/ELEC_SignedRepair/WallStandOff",
+        "name": "WallStandOff",
+        "class": "Part",
+        "center": [
+          -50.7,
+          -51.6,
+          11.25
+        ],
+        "size": [
+          0.13,
+          0.13,
+          0.55
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000700000C4",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Visual_Detail_V7/E04_Operator_Detail/AcousticWallAndDocumentation/FabricInsert",
+        "name": "FabricInsert",
+        "class": "Part",
+        "center": [
+          -53.0,
+          -53.0,
+          11.11
+        ],
+        "size": [
+          4.8,
+          7.4,
+          0.12
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.165,
+      "mounting_reason": "Repair-tray standoff anchors into an existing wall or acoustic-panel mounting layer."
+    },
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000A63",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/ELEC_SignedRepair/WallStandOff",
+        "name": "WallStandOff",
+        "class": "Part",
+        "center": [
+          -41.3,
+          -51.6,
+          11.25
+        ],
+        "size": [
+          0.13,
+          0.13,
+          0.55
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000700000CB",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Visual_Detail_V7/E04_Operator_Detail/AcousticWallAndDocumentation/AcousticFrame",
+        "name": "AcousticFrame",
+        "class": "Part",
+        "center": [
+          -41.0,
+          -53.0,
+          11.28
+        ],
+        "size": [
+          5.15,
+          7.8,
+          0.24
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.365,
+      "mounting_reason": "Repair-tray standoff anchors into an existing wall or acoustic-panel mounting layer."
+    },
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000A63",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/ELEC_SignedRepair/WallStandOff",
+        "name": "WallStandOff",
+        "class": "Part",
+        "center": [
+          -41.3,
+          -51.6,
+          11.25
+        ],
+        "size": [
+          0.13,
+          0.13,
+          0.55
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000700000CC",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Visual_Detail_V7/E04_Operator_Detail/AcousticWallAndDocumentation/FabricInsert",
+        "name": "FabricInsert",
+        "class": "Part",
+        "center": [
+          -41.0,
+          -53.0,
+          11.11
+        ],
+        "size": [
+          4.8,
+          7.4,
+          0.12
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.195,
+      "mounting_reason": "Repair-tray standoff anchors into an existing wall or acoustic-panel mounting layer."
+    },
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000DEA",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/ELEC_SignedRepair/WallStandOff",
+        "name": "WallStandOff",
+        "class": "Part",
+        "center": [
+          -12.2,
+          -50.5,
+          74.35
+        ],
+        "size": [
+          0.13,
+          0.13,
+          0.55
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000000001CC",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/B2_Architecture/E-16_APPARATUS/Wall",
+        "name": "Wall",
+        "class": "Part",
+        "center": [
+          0.0,
+          -52.0,
+          75.0
+        ],
+        "size": [
+          32.0,
+          24.0,
+          1.0
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.125,
+      "mounting_reason": "Repair-tray standoff anchors into an existing wall or acoustic-panel mounting layer."
+    },
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000DEC",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/ELEC_SignedRepair/WallStandOff",
+        "name": "WallStandOff",
+        "class": "Part",
+        "center": [
+          -3.8,
+          -50.5,
+          74.35
+        ],
+        "size": [
+          0.13,
+          0.13,
+          0.55
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000000001CC",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/B2_Architecture/E-16_APPARATUS/Wall",
+        "name": "Wall",
+        "class": "Part",
+        "center": [
+          0.0,
+          -52.0,
+          75.0
+        ],
+        "size": [
+          32.0,
+          24.0,
+          1.0
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.125,
+      "mounting_reason": "Repair-tray standoff anchors into an existing wall or acoustic-panel mounting layer."
+    },
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000E58",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/Physical_Protocol_Feedback_V10/P01_SignalDriver/DriverWallStandOff",
+        "name": "DriverWallStandOff",
+        "class": "Part",
+        "center": [
+          -60.5,
+          -53.7,
+          11.28
+        ],
+        "size": [
+          0.24,
+          0.35,
+          0.31
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000700000BF",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Visual_Detail_V7/E04_Operator_Detail/AcousticWallAndDocumentation/AcousticFrame",
+        "name": "AcousticFrame",
+        "class": "Part",
+        "center": [
+          -59.0,
+          -53.0,
+          11.28
+        ],
+        "size": [
+          5.15,
+          7.8,
+          0.24
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.275,
+      "mounting_reason": "P01 driver standoffs join the case rear at Z=11.15 to the existing acoustic backing frame at Z=11.16..11.40."
+    },
+    {
+      "new_solid": {
+        "ref": "RBX00000000000000000000000070000E59",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/Physical_Protocol_Feedback_V10/P01_SignalDriver/DriverWallStandOff",
+        "name": "DriverWallStandOff",
+        "class": "Part",
+        "center": [
+          -57.5,
+          -53.7,
+          11.28
+        ],
+        "size": [
+          0.24,
+          0.35,
+          0.31
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "existing_solid": {
+        "ref": "RBX000000000000000000000000700000BF",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Visual_Detail_V7/E04_Operator_Detail/AcousticWallAndDocumentation/AcousticFrame",
+        "name": "AcousticFrame",
+        "class": "Part",
+        "center": [
+          -59.0,
+          -53.0,
+          11.28
+        ],
+        "size": [
+          5.15,
+          7.8,
+          0.24
+        ],
+        "shape_bounds": "block",
+        "transparency": 0.0,
+        "click_target": false,
+        "display": false
+      },
+      "overlap": 0.275,
+      "mounting_reason": "P01 driver standoffs join the case rear at Z=11.15 to the existing acoustic backing frame at Z=11.16..11.40."
+    }
+  ],
+  "services_checked": [
+    {
+      "panel": "RBX00000000000000000000000070000360",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000389",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700003B0",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000416",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000425",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700004B3",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700004F4",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000539",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000569",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700005A0",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700005AF",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700006BD",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000792",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007A1",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007BB",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007CC",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007FB",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000080C",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000083D",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000877",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700008E7",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000923",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000935",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000959",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700009C3",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700009E5",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700009F5",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A10",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A2B",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A43",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A53",
+      "legacy": true,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000045",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000192",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000213",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A72",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000AA6",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000AF4",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000B05",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000B32",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000B64",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000BC5",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000BEC",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000C1B",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000C4A",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000CC4",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D06",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D55",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D68",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D7F",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000DB5",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000DF4",
+      "legacy": false,
+      "sampled_collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000E2C",
+      "legacy": false,
+      "sampled_collisions": 0
+    }
+  ],
+  "service_sweep_samples_per_mover": 9,
+  "service_sweep_collision_candidates": [],
+  "physical_protocol_feedback": {
+    "observer_shutter": {
+      "ref": "RBX00000000000000000000000070000E15",
+      "samples": 9,
+      "closed_position": [
+        -13.15,
+        -53.7,
+        61.7
+      ],
+      "open_offset": [
+        0.0,
+        0.0,
+        1.3
+      ],
+      "collision_candidates": []
+    },
+    "p01_lamps": {
+      "A": {
+        "ref": "RBX00000000000000000000000070000E3E",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/Physical_Protocol_Feedback_V10/P01_SignalDriver/V10_P01_Light_A"
+      },
+      "B": {
+        "ref": "RBX00000000000000000000000070000E44",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/Physical_Protocol_Feedback_V10/P01_SignalDriver/V10_P01_Light_B"
+      },
+      "C": {
+        "ref": "RBX00000000000000000000000070000E4A",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/Physical_Protocol_Feedback_V10/P01_SignalDriver/V10_P01_Light_C"
+      }
+    },
+    "p05_reference": {
+      "ref": "RBX00000000000000000000000070000AB7",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/IndependentReferenceMeter/V9_ServiceDoor/V7_Legend/V10_P05_Reference"
+    }
+  },
+  "interaction_approaches": [
+    {
+      "part": "RBX00000000000000000000000070000113",
+      "action": "records",
+      "argument": "records",
+      "label": "Журнал смены",
+      "position": [
+        11.5,
+        -59.12,
+        -65.66
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/ShiftRecords/V10_ConsoleScreen",
+      "reachable": true,
+      "sampled_standing_head": [
+        8.734472646333614,
+        -59.35,
+        -66.09801650211264
+      ],
+      "distance": 2.8094,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000113",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000154",
+      "action": "npc",
+      "argument": "TECH",
+      "label": "Илья Ветров / Техник смены",
+      "position": [
+        11.5,
+        -58.95,
+        -71.3
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Head",
+      "reachable": true,
+      "sampled_standing_head": [
+        14.3,
+        -59.35,
+        -71.3
+      ],
+      "distance": 2.8284,
+      "sample_trials": 1,
+      "first_hit": "RBX00000000000000000000000070000154",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000177",
+      "action": "document",
+      "argument": "DOC_SHIFT_HANDOVER",
+      "label": "Передача смены 04",
+      "position": [
+        9.7,
+        -57.7,
+        -48.835
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/ShiftHandover/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        7.037041754373569,
+        -59.35,
+        -49.70024758424985
+      ],
+      "distance": 3.25,
+      "sample_trials": 23,
+      "first_hit": "RBX00000000000000000000000070000177",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000184",
+      "action": "document",
+      "argument": "DOC_ACCESS",
+      "label": "Порядок допуска к испытанию",
+      "position": [
+        -9.7,
+        -55.0,
+        -75.165
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/AccessPolicy/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -11.345798706418924,
+        -59.35,
+        -72.89975241575016
+      ],
+      "distance": 5.1732,
+      "sample_trials": 15,
+      "first_hit": "RBX00000000000000000000000070000184",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000267",
+      "action": "console",
+      "argument": "P01",
+      "label": "Пульт P01",
+      "position": [
+        -60.9,
+        -59.12,
+        -6.66
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/P01_OperatorTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "sampled_standing_head": [
+        -62.54579870641892,
+        -59.35,
+        -8.925247584249853
+      ],
+      "distance": 2.8094,
+      "sample_trials": 27,
+      "first_hit": "RBX00000000000000000000000070000267",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX000000000000000000000000700002ED",
+      "action": "document",
+      "argument": "DOC_P01_PROTOCOL",
+      "label": "P-01: сенсорная синхронизация",
+      "position": [
+        -48.0,
+        -56.3,
+        10.865
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/P01_Protocol/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -50.765527353666386,
+        -59.35,
+        10.426983497887354
+      ],
+      "distance": 4.1404,
+      "sample_trials": 22,
+      "first_hit": "RBX000000000000000000000000700002ED",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX000000000000000000000000700002FA",
+      "action": "document",
+      "argument": "DOC_P03_LOG",
+      "label": "Инцидент 03: официальная сводка",
+      "position": [
+        -58.0,
+        -56.5,
+        10.865
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/OfficialIncidentSummary/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -60.765527353666386,
+        -59.35,
+        10.426983497887354
+      ],
+      "distance": 3.9953,
+      "sample_trials": 22,
+      "first_hit": "RBX000000000000000000000000700002FA",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000308",
+      "action": "document",
+      "argument": "DOC_OPERATOR",
+      "label": "Личный журнал оператора Соколовой",
+      "position": [
+        -34.0,
+        -59.1,
+        10.845
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/OperatorPersonalFile/DossierReadFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -36.765527353666386,
+        -59.35,
+        10.406983497887355
+      ],
+      "distance": 2.8111,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000308",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000A84",
+      "action": "console",
+      "argument": "P05",
+      "label": "Пульт P05",
+      "position": [
+        21.1,
+        -59.12,
+        -9.66
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/P05_BoundaryTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "sampled_standing_head": [
+        18.334472646333616,
+        -59.35,
+        -10.098016502112646
+      ],
+      "distance": 2.8094,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000A84",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000A98",
+      "action": "document",
+      "argument": "DOC_P05_PROTOCOL",
+      "label": "P-05: граница симуляции",
+      "position": [
+        -12.6,
+        -57.5,
+        -23.015
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/P05_Protocol/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -9.93704175437357,
+        -59.35,
+        -22.149752415750147
+      ],
+      "distance": 3.356,
+      "sample_trials": 3,
+      "first_hit": "RBX00000000000000000000000070000A98",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000ABE",
+      "action": "document",
+      "argument": "DOC_NULL_LIMIT",
+      "label": "Ограничение программы NULL",
+      "position": [
+        18.0,
+        -56.8,
+        23.015
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/RedactedBoundaryMemo/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        15.234472646333614,
+        -59.35,
+        22.576983497887355
+      ],
+      "distance": 3.7871,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000ABE",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000ACC",
+      "action": "npc",
+      "argument": "MEDIC",
+      "label": "Лидия Кравцова / Медицинское сопровождение",
+      "position": [
+        76.4,
+        -58.95,
+        -7.4
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Head",
+      "reachable": true,
+      "sampled_standing_head": [
+        78.37989898732233,
+        -59.35,
+        -5.420101012677668
+      ],
+      "distance": 2.8284,
+      "sample_trials": 6,
+      "first_hit": "RBX00000000000000000000000070000ACC",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000B15",
+      "action": "document",
+      "argument": "DOC_RECOVERY",
+      "label": "Акт передачи в восстановление",
+      "position": [
+        76.0,
+        -56.8,
+        -23.015
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/RecoveryTransfer/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        78.49481826772742,
+        -59.35,
+        -21.74382660072927
+      ],
+      "distance": 3.7871,
+      "sample_trials": 4,
+      "first_hit": "RBX00000000000000000000000070000B15",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000B22",
+      "action": "document",
+      "argument": "DOC_MISSING_SHIFT",
+      "label": "Незакрытый лист смены",
+      "position": [
+        45.8,
+        -56.5,
+        6.915
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/VacantPost/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        43.03447264633361,
+        -59.35,
+        6.476983497887354
+      ],
+      "distance": 3.9953,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000B22",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000B44",
+      "action": "medical",
+      "argument": "kit",
+      "label": "Медицинский комплект",
+      "position": [
+        71.5,
+        -58.6,
+        -66.61
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E06_MedicalRecords/FirstAidDispenser",
+      "reachable": true,
+      "sampled_standing_head": [
+        69.23475241575015,
+        -59.35,
+        -68.25579870641893
+      ],
+      "distance": 2.8987,
+      "sample_trials": 25,
+      "first_hit": "RBX00000000000000000000000070000B44",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000B50",
+      "action": "document",
+      "argument": "DOC_MEDICAL",
+      "label": "Карта наблюдения и выдачи комплектов",
+      "position": [
+        50.7,
+        -56.8,
+        -69.115
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E06_MedicalRecords/MedicalObservation/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        53.36295824562643,
+        -59.35,
+        -68.24975241575014
+      ],
+      "distance": 3.7871,
+      "sample_trials": 3,
+      "first_hit": "RBX00000000000000000000000070000B50",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000B76",
+      "action": "console",
+      "argument": "P03",
+      "label": "Пульт P03",
+      "position": [
+        -55.6,
+        -59.12,
+        -45.66
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E07_TimelineAndReconstruction/P03_ReconstructionTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "sampled_standing_head": [
+        -56.46524758424985,
+        -59.35,
+        -48.322958245626424
+      ],
+      "distance": 2.8094,
+      "sample_trials": 29,
+      "first_hit": "RBX00000000000000000000000070000B76",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000B8A",
+      "action": "document",
+      "argument": "DOC_P03_CORRECTION",
+      "label": "Инцидент 03: независимая хронология",
+      "position": [
+        -51.7,
+        -57.4,
+        -59.115
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E07_TimelineAndReconstruction/IndependentSignedLog/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -49.037041754373575,
+        -59.35,
+        -58.24975241575015
+      ],
+      "distance": 3.4121,
+      "sample_trials": 3,
+      "first_hit": "RBX00000000000000000000000070000B8A",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000B97",
+      "action": "document",
+      "argument": "DOC_CALIBRATION",
+      "label": "Предписание по калибровке",
+      "position": [
+        -35.3,
+        -54.0,
+        -59.115
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E07_TimelineAndReconstruction/CalibrationOrder/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -32.63704175437357,
+        -59.35,
+        -58.24975241575015
+      ],
+      "distance": 6.0384,
+      "sample_trials": 3,
+      "first_hit": "RBX00000000000000000000000070000B97",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000BDF",
+      "action": "supply",
+      "argument": "filter",
+      "label": "Запасной фильтр",
+      "position": [
+        60.0,
+        -58.5,
+        74.37
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/FilterIssuePlate",
+      "reachable": true,
+      "sampled_standing_head": [
+        57.2,
+        -59.35,
+        74.37
+      ],
+      "distance": 2.9262,
+      "sample_trials": 21,
+      "first_hit": "RBX00000000000000000000000070000BDF",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000BF9",
+      "action": "repair",
+      "argument": "repair",
+      "label": "Замена фильтра и сброс защиты",
+      "position": [
+        64.0,
+        -58.64,
+        75.6
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/MaintenanceWorkOrder",
+      "reachable": true,
+      "sampled_standing_head": [
+        67.95075336238055,
+        -59.35,
+        76.22573786016092
+      ],
+      "distance": 4.0625,
+      "sample_trials": 42,
+      "first_hit": "RBX00000000000000000000000070000BF9",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000C04",
+      "action": "document",
+      "argument": "DOC_SUPPLY",
+      "label": "Выдача фильтров и обслуживание",
+      "position": [
+        62.0,
+        -54.4,
+        78.105
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/FilterIssueLog/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        56.56771412672674,
+        -59.35,
+        77.24461044227874
+      ],
+      "distance": 7.3995,
+      "sample_trials": 102,
+      "first_hit": "RBX00000000000000000000000070000C04",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000C32",
+      "action": "document",
+      "argument": "DOC_QUARANTINE",
+      "label": "Карантин снятого драйвера",
+      "position": [
+        -35.6,
+        -56.3,
+        69.115
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E09_QuarantinedHardware/QuarantineInventory/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -38.26295824562643,
+        -59.35,
+        68.24975241575014
+      ],
+      "distance": 4.1404,
+      "sample_trials": 23,
+      "first_hit": "RBX00000000000000000000000070000C32",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000C5C",
+      "action": "console",
+      "argument": "P02",
+      "label": "Пульт P02",
+      "position": [
+        215.5,
+        -59.12,
+        -6.46
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PerceptionTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "sampled_standing_head": [
+        212.73447264633361,
+        -59.35,
+        -6.898016502112646
+      ],
+      "distance": 2.8094,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000C5C",
+      "floor_support": "RBX00000000000000000000000000001681"
+    },
+    {
+      "part": "RBX00000000000000000000000070000C70",
+      "action": "document",
+      "argument": "DOC_P02_PROTOCOL",
+      "label": "P-02: нарушение восприятия",
+      "position": [
+        208.0,
+        -56.2,
+        -11.065
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_Rule/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        210.76552735366639,
+        -59.35,
+        -10.626983497887354
+      ],
+      "distance": 4.2146,
+      "sample_trials": 2,
+      "first_hit": "RBX00000000000000000000000070000C70",
+      "floor_support": "RBX00000000000000000000000000001681"
+    },
+    {
+      "part": "RBX00000000000000000000000070000C7D",
+      "action": "document",
+      "argument": "DOC_HALL_CONTROL",
+      "label": "Памятка независимого наблюдения",
+      "position": [
+        192.0,
+        -56.2,
+        11.065
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/ObserverStaffMemo/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        189.23447264633361,
+        -59.35,
+        10.626983497887354
+      ],
+      "distance": 4.2146,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000C7D",
+      "floor_support": "RBX00000000000000000000000000001681"
+    },
+    {
+      "part": "RBX00000000000000000000000070000C94",
+      "action": "response",
+      "argument": "left",
+      "label": "P02 / левый путь",
+      "position": [
+        148.65,
+        -61.3,
+        -19.0
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PhysicalResponsePosts/P02_Response_left/PhysicalResponseButton",
+      "reachable": true,
+      "sampled_standing_head": [
+        149.08801650211265,
+        -59.35,
+        -16.234472646333614
+      ],
+      "distance": 3.4121,
+      "sample_trials": 10,
+      "first_hit": "RBX00000000000000000000000070000C94",
+      "floor_support": "RBX00000000000000000000000000001681"
+    },
+    {
+      "part": "RBX00000000000000000000000070000CA3",
+      "action": "response",
+      "argument": "center",
+      "label": "P02 / центральный путь",
+      "position": [
+        169.35,
+        -61.3,
+        -3.0
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PhysicalResponsePosts/P02_Response_center/PhysicalResponseButton",
+      "reachable": true,
+      "sampled_standing_head": [
+        169.35,
+        -59.35,
+        2.5
+      ],
+      "distance": 5.8355,
+      "sample_trials": 91,
+      "first_hit": "RBX00000000000000000000000070000CA3",
+      "floor_support": "RBX00000000000000000000000000001681"
+    },
+    {
+      "part": "RBX00000000000000000000000070000CB2",
+      "action": "response",
+      "argument": "right",
+      "label": "P02 / правый путь",
+      "position": [
+        148.65,
+        -61.3,
+        16.0
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PhysicalResponsePosts/P02_Response_right/PhysicalResponseButton",
+      "reachable": true,
+      "sampled_standing_head": [
+        149.08801650211265,
+        -59.35,
+        18.765527353666386
+      ],
+      "distance": 3.4121,
+      "sample_trials": 10,
+      "first_hit": "RBX00000000000000000000000070000CB2",
+      "floor_support": "RBX00000000000000000000000000001681"
+    },
+    {
+      "part": "RBX00000000000000000000000070000D47",
+      "action": "document",
+      "argument": "DOC_GENERATIONS",
+      "label": "Переход между поколениями аппаратуры",
+      "position": [
+        143.0,
+        -55.3,
+        87.065
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E13_WithdrawnGeneration/RetiredGeneration/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        140.23447264633361,
+        -59.35,
+        86.62698349788735
+      ],
+      "distance": 4.9237,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000D47",
+      "floor_support": "RBX00000000000000000000000000001681"
+    },
+    {
+      "part": "RBX00000000000000000000000070000D91",
+      "action": "console",
+      "argument": "P04",
+      "label": "Пульт P04",
+      "position": [
+        -13.6,
+        -59.12,
+        55.44
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/P04_ObserverTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "sampled_standing_head": [
+        -14.465247584249854,
+        -59.35,
+        52.77704175437357
+      ],
+      "distance": 2.8094,
+      "sample_trials": 29,
+      "first_hit": "RBX00000000000000000000000070000D91",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000DA5",
+      "action": "document",
+      "argument": "DOC_P04_PROTOCOL",
+      "label": "P-04: автономный наблюдатель",
+      "position": [
+        -7.5,
+        -56.0,
+        51.885
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/P04_ObservationRules/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -4.734472646333614,
+        -59.35,
+        52.323016502112644
+      ],
+      "distance": 4.3661,
+      "sample_trials": 2,
+      "first_hit": "RBX00000000000000000000000070000DA5",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    },
+    {
+      "part": "RBX00000000000000000000000070000DC7",
+      "action": "cooling",
+      "argument": "toggle",
+      "label": "Управление охлаждением",
+      "position": [
+        26.0,
+        -59.12,
+        57.94
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/CoolingControl/V10_ConsoleScreen",
+      "reachable": true,
+      "sampled_standing_head": [
+        23.234472646333614,
+        -59.35,
+        57.50198349788735
+      ],
+      "distance": 2.8094,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000DC7",
+      "floor_support": "RBX00000000000000000000000000001FF6"
+    },
+    {
+      "part": "RBX00000000000000000000000070000DDB",
+      "action": "document",
+      "argument": "DOC_COOLING",
+      "label": "Контур охлаждения и защита",
+      "position": [
+        -6.0,
+        -55.9,
+        74.015
+      ],
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/CoolingMaintenance/DocumentFace",
+      "reachable": true,
+      "sampled_standing_head": [
+        -8.765527353666386,
+        -59.35,
+        73.57698349788735
+      ],
+      "distance": 4.4433,
+      "sample_trials": 22,
+      "first_hit": "RBX00000000000000000000000070000DDB",
+      "floor_support": "RBX00000000000000000000000000001FF5"
+    }
+  ],
+  "lore_document_count": 19,
+  "runtime_sources": [
+    {
+      "name": "ExperimentCore",
+      "path": "ServerScriptService/ProjectNullV10/ExperimentCore",
+      "source_sha256": "a7f23525c99dbd5064364f1fbf0afd5ec9e2c00bc34a29b85cb2db33daeae731"
+    },
+    {
+      "name": "ProjectNullServer_V10",
+      "path": "ServerScriptService/ProjectNullV10/ProjectNullServer_V10",
+      "source_sha256": "67a3f00fea55acc68993af22429af2ae746384d01e80afddc7008d4514b80e77"
+    },
+    {
+      "name": "ProjectNullClient_V10",
+      "path": "StarterPlayer/StarterPlayerScripts/ProjectNullClient_V10",
+      "source_sha256": "cef9d4679bf925f8a21ca9501b728e2e5225cc0ff58c76fa181e456d11b00e92"
+    }
+  ],
+  "remotes": [
+    {
+      "name": "Request",
+      "count": 1
+    },
+    {
+      "name": "Push",
+      "count": 1
+    }
+  ],
+  "staff_rigs": [
+    {
+      "id": "TECH",
+      "children": {
+        "HumanoidRootPart": "Part",
+        "Torso": "Part",
+        "Head": "Part",
+        "Left Arm": "Part",
+        "Right Arm": "Part",
+        "Left Leg": "Part",
+        "Right Leg": "Part",
+        "Boot": "Part",
+        "Eye": "Part",
+        "Mouth": "Part",
+        "UniformCollar": "Part",
+        "StaffBadge": "Part",
+        "UtilityBelt": "Part",
+        "Radio": "Part",
+        "RadioAntenna": "Part",
+        "Humanoid": "Humanoid"
+      },
+      "valid": true
+    },
+    {
+      "id": "MEDIC",
+      "children": {
+        "HumanoidRootPart": "Part",
+        "Torso": "Part",
+        "Head": "Part",
+        "Left Arm": "Part",
+        "Right Arm": "Part",
+        "Left Leg": "Part",
+        "Right Leg": "Part",
+        "Boot": "Part",
+        "Eye": "Part",
+        "Mouth": "Part",
+        "UniformCollar": "Part",
+        "StaffBadge": "Part",
+        "UtilityBelt": "Part",
+        "Radio": "Part",
+        "RadioAntenna": "Part",
+        "Humanoid": "Humanoid"
+      },
+      "valid": true
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "limitations": [
+    "No real Roblox rendering, avatar traversal, physics, replication or audio test was executed.",
+    "Interaction approaches sample a ground-level body and finite ray, not a continuous path from spawn.",
+    "Cylinders, spheres and meshes use conservative oriented boxes.",
+    "Service movement uses nine sampled poses; actual continuous animation still needs engine testing."
+  ]
+}

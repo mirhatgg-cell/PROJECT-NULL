@@ -1,0 +1,45 @@
+{
+  "result": "PASS",
+  "map_sha256": "6c7cd75d14888d070421008fd3e4488be3657160e49d4c08064af35cacb0e195",
+  "runtime_sha256": {
+    "src/ExperimentCore_V10.luau": "a7f23525c99dbd5064364f1fbf0afd5ec9e2c00bc34a29b85cb2db33daeae731",
+    "src/ProjectNullClient_V10.client.luau": "cef9d4679bf925f8a21ca9501b728e2e5225cc0ff58c76fa181e456d11b00e92",
+    "src/ProjectNullServer_V10.server.luau": "67a3f00fea55acc68993af22429af2ae746384d01e80afddc7008d4514b80e77"
+  },
+  "checks": [
+    {
+      "name": "static XML / oriented geometry / service motion",
+      "passed": true,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"protected_v9_instances\": 9635,\n  \"new_instances\": 1294,\n  \"new_parts\": 684,\n  \"new_primary_colliders\": 266,\n  \"registered_cavities\": 21,\n  \"lore_document_count\": 19,\n  \"warnings\": [],\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "actual Lua experiment core / 14 scenario groups",
+      "passed": true,
+      "stdout": "PASS: P01 complete / cue privacy / immutable terminal state\nPASS: P02 complete / cue privacy / immutable terminal state\nPASS: P03 complete / cue privacy / immutable terminal state\nPASS: P04 complete / cue privacy / immutable terminal state\nPASS: P05 complete / cue privacy / immutable terminal state\nPASS: Wrong procedure stops each experiment; damage emitted once\nPASS: Exclusive ownership / actor validation / malformed responses / safe abort\nPASS: Disconnected owner interruption / recovery by another player\nPASS: Circuit requirements match each protocol before and during a run\nPASS: Missed deadline trips once, including a large server time jump\nPASS: Thermal trip / bounded damage / cooling and safe temperature recovery\nPASS: Finite supplies / physical resupply / repair and medical costs\nPASS: P04 actual movement guard, real stillness and real-step requirement\nPASS: Non-finite time rejection / bounded dt / bounded copied records\nV10 experiment core: 14 scenario groups passed (actual Lua source).\n",
+      "stderr": ""
+    },
+    {
+      "name": "actual Lua server integration / 21 scenario groups",
+      "passed": true,
+      "stdout": "PASS: test_prompt_authorization\nPASS: test_remote_context_and_owner\nPASS: test_untrusted_payloads_and_supply\nPASS: test_documents_are_discovered_locally\nPASS: test_circuit_trip_death_and_bounded_damage\nPASS: test_staff_reacts_to_actual_state\nPASS: test_p02_requires_physical_sensor\nPASS: test_p04_observes_real_movement\nPASS: test_persistence_merge_and_idempotent_save\nPASS: test_persistence_read_failure_never_overwrites\nPASS: test_persistence_delayed_load_merges_discovery\nPASS: test_persistence_write_failure_and_autosave\nPASS: test_persistence_departure_and_shutdown\nPASS: test_delayed_load_departure_and_shutdown\nPASS: test_completion_record_and_pending_save_changes\nPASS: test_offline_status_is_honest\nPASS: test_p03_requires_discovered_independent_evidence\nPASS: test_physical_experiment_feedback\nPASS: test_unused_console_reservation_releases_safely\nPASS: test_terminal_reservation_release_preserves_results\nPASS: test_studio_negative_userids_play_without_persistent_writes\nPASS: actual V10 server + core integration in mocked Roblox APIs; Studio acceptance remains necessary.\n",
+      "stderr": ""
+    },
+    {
+      "name": "actual Lua client / GUI and event doubles",
+      "passed": true,
+      "stdout": "PASS: actual V10 client boot, requests, all five protocol evidence views,\n      preview/hold gates, P02 physical-only choices, mobile scroll, journal and cleanup.\n",
+      "stderr": ""
+    },
+    {
+      "name": "byte-identical repeat build",
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "name": "embedded Content ModuleScript equals authored JSON",
+      "passed": true
+    }
+  ],
+  "limitations": "Tests execute real Lua with Roblox API doubles and static geometry. No Studio rendering, character physics, real networking, live DataStore or FPS test was performed."
+}

@@ -1,4 +1,30 @@
-# PROJECT: NULL — V9, физическое оборудование и обслуживание
+# PROJECT: NULL — V10, окружение и игровые процедуры
+
+Текущая карта: [PROJECT_NULL_GAMEPLAY_V10.rbxlx](artifacts/PROJECT_NULL_GAMEPLAY_V10.rbxlx). Открыть в Roblox Studio и включить **Play**; все скрипты встроены.
+
+V10 объединяет этапы 4 и 5: 19 документов и история помещений, пять разных экспериментальных процедур, реальные цепи питания, охлаждение и перегрев, расходники, ремонт, медицинская помощь, два сотрудника, журнал и сохранение. В P02 нужно дойти до физических датчиков; P04 проверяет настоящее движение персонажа; P03 требует найденные свидетельства E04/E07. Физические сигналы и шторка следуют состоянию процедуры.
+
+- [Скачать архив V10](https://github.com/mirhatgg-cell/PROJECT-NULL/raw/refs/heads/main/artifacts/PROJECT_NULL_V10_REVIEW.zip).
+- [Первый запуск, правила и проверки](docs/STAGES_4_5_V10.md).
+- [Изменения помещений](artifacts/PROJECT_NULL_V10_OVERVIEW.png), [внутреннее содержимое](artifacts/PROJECT_NULL_V10_CONTENTS.png), [схема постов](artifacts/PROJECT_NULL_V10_STATIONS.png).
+- [Копия с открытыми сервисными доступами](artifacts/PROJECT_NULL_V10_OPEN_INSPECTION.rbxlx).
+- [Статический аудит](artifacts/V10_AUDIT.json), [результаты тестов](artifacts/TEST_RESULTS_V10.json).
+
+Основной файл архива — **`artifacts/PROJECT_NULL_GAMEPLAY_V10.rbxlx`**. Начать с E01, затем пульт P01 в E04. **E** — игровые действия; **F** — новые сервисные панели V10; **J** — личный журнал; **X** — закрыть окно. Старые сервисные панели V9 открываются на E.
+
+Добавлены 684 детали, 266 основных коллайдеров и 21 полый корпус с содержимым. Все экземпляры V9 сохранены. Полная карта содержит 8 351 BasePart; 52 сервисные сборки доступны для осмотра. В неопубликованном файле прогресс хранится до выхода; постоянные сохранения используют серверный DataStore опубликованной игры.
+
+Статический аудит и тесты настоящего Lua-кода с имитацией Roblox API прошли. Roblox Studio здесь отсутствует: проход персонажем, изображение, звук, сеть и FPS ещё нужно проверить в движке. Инструкция содержит конкретный список приёмки.
+
+```sh
+python3 -m pip install -r tools/requirements-v10.txt
+python3 tools/build_v10.py
+python3 tools/verify_v10.py
+python3 tools/render_v10.py
+python3 tools/package_v10.py
+```
+
+## V9 — предыдущая физическая переработка
 
 Текущая карта: [PROJECT_NULL_ENGINEERING_V9.rbxlx](artifacts/PROJECT_NULL_ENGINEERING_V9.rbxlx).
 
