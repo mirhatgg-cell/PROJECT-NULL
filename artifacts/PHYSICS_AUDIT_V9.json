@@ -1,0 +1,318 @@
+{
+  "result": "PASS",
+  "validation": "Static XML and conservative OBB checks; no Roblox Studio physics/rendering/avatar execution",
+  "source_sha256": "a666e94bbb671a4a82a5117682d1b71e8c15beb200238cae6aceab41a511f09e",
+  "target_sha256": "8664135908a138cd4c8933047b38298713f5e2245ed1ed3fb68a8642f46c12c3",
+  "legacy_addon_parts_before": 678,
+  "legacy_addon_collidable_before": 0,
+  "protected_architecture_door_and_script_instances": 2899,
+  "retained_legacy_primary_parts_checked": 168,
+  "modified_existing_instances": 169,
+  "removed_existing_instances": 267,
+  "authored_part_roles": {
+    "walkable": 43,
+    "structure": 375,
+    "detail": 451,
+    "housing": 174,
+    "panel": 32,
+    "internal": 744,
+    "control": 2
+  },
+  "authored_primary_collision_parts": 624,
+  "registered_cavities": 27,
+  "cavities": [
+    {
+      "model": "RBX00000000000000000000000070000355",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E07_Serviceable_V9/OpticalHead_REF",
+      "internal_scope": "RBX00000000000000000000000070000355",
+      "internal_parts_inside": 14,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000037E",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E07_Serviceable_V9/OpticalHead_DUT",
+      "internal_scope": "RBX0000000000000000000000007000037E",
+      "internal_parts_inside": 14,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700003A7",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E07_Serviceable_V9/LAB_CAL_02_ServiceableAnalyzer",
+      "internal_scope": "RBX000000000000000000000000700003A7",
+      "internal_parts_inside": 42,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000040C",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E07_Serviceable_V9/LAB_CAL_03_ModularServiceRack",
+      "internal_scope": "RBX0000000000000000000000007000040C",
+      "internal_parts_inside": 71,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700004AD",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/P02_Serviceable_Equipment_V9/EXP-P02-01_ServiceableJunction",
+      "internal_scope": "RBX000000000000000000000000700004AD",
+      "internal_parts_inside": 42,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700004EE",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/P02_Serviceable_Equipment_V9/EXP-P02-02_ServiceableJunction",
+      "internal_scope": "RBX000000000000000000000000700004EE",
+      "internal_parts_inside": 42,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000052F",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/P02_Serviceable_Equipment_V9/EXP_P02_03_OpticalHead_01",
+      "internal_scope": "RBX0000000000000000000000007000052F",
+      "internal_parts_inside": 17,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000055F",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/P02_Serviceable_Equipment_V9/EXP_P02_03_OpticalHead_02",
+      "internal_scope": "RBX0000000000000000000000007000055F",
+      "internal_parts_inside": 17,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000058F",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/P02_Serviceable_Equipment_V9/EXP_P02_04_InstrumentServiceRack",
+      "internal_scope": "RBX0000000000000000000000007000058F",
+      "internal_parts_inside": 108,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700006BC",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/Thermal_Serviceable_V9/THERM_016_FanCoil/FanCoilPhysicalShell",
+      "internal_scope": "RBX000000000000000000000000700006BC",
+      "internal_parts_inside": 99,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700007B6",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/Thermal_Serviceable_V9/THERM_017_ConnectedCoolingSkid/DutyStandbyPumpAssemblies/P01_PumpMotor/M01_HollowMotorCase",
+      "internal_scope": "RBX000000000000000000000000700007B6",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700007C7",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/Thermal_Serviceable_V9/THERM_017_ConnectedCoolingSkid/DutyStandbyPumpAssemblies/P01_PumpMotor/P01_HollowVoluteCase",
+      "internal_scope": "RBX000000000000000000000000700007C7",
+      "internal_parts_inside": 14,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700007F6",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/Thermal_Serviceable_V9/THERM_017_ConnectedCoolingSkid/DutyStandbyPumpAssemblies/P02_PumpMotor/M02_HollowMotorCase",
+      "internal_scope": "RBX000000000000000000000000700007F6",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000807",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/Thermal_Serviceable_V9/THERM_017_ConnectedCoolingSkid/DutyStandbyPumpAssemblies/P02_PumpMotor/P02_HollowVoluteCase",
+      "internal_scope": "RBX00000000000000000000000070000807",
+      "internal_parts_inside": 14,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000839",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/Thermal_Serviceable_V9/THERM_017_ConnectedCoolingSkid/BufferReservoirWithInspectionLid/HollowBufferTank",
+      "internal_scope": "RBX00000000000000000000000070000839",
+      "internal_parts_inside": 5,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000872",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/Thermal_Serviceable_V9/THERM_017_ConnectedCoolingSkid/PumpDriveControlCabinet/PumpDriveHollowCabinet",
+      "internal_scope": "RBX00000000000000000000000070000872",
+      "internal_parts_inside": 20,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700008E2",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E03_Immersion_Machinery_V9/NIF_ConnectionCabinet",
+      "internal_scope": "RBX000000000000000000000000700008E2",
+      "internal_parts_inside": 34,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000091D",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E03_Immersion_Machinery_V9/NIF_UpperSensor",
+      "internal_scope": "RBX0000000000000000000000007000091D",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000933",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E03_Immersion_Machinery_V9/Chair_ActuatorBase",
+      "internal_scope": "RBX00000000000000000000000070000933",
+      "internal_parts_inside": 13,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000954",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E03_Immersion_Machinery_V9/EXP_NIF_FourChannelCabinet",
+      "internal_scope": "RBX00000000000000000000000070000954",
+      "internal_parts_inside": 63,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700009BD",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E03_Immersion_Machinery_V9/NIF_EmergencyStopContacts",
+      "internal_scope": "RBX000000000000000000000000700009BD",
+      "internal_parts_inside": 5,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700009DF",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E06_Serviceable_Storage_V9/WasteLinerContainer",
+      "internal_scope": "RBX000000000000000000000000700009DF",
+      "internal_parts_inside": 2,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700009F0",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E06_Serviceable_Storage_V9/TrolleyDrawer_1",
+      "internal_scope": "RBX000000000000000000000000700009F0",
+      "internal_parts_inside": 4,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000A0B",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E06_Serviceable_Storage_V9/TrolleyDrawer_2",
+      "internal_scope": "RBX00000000000000000000000070000A0B",
+      "internal_parts_inside": 4,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000A26",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E06_Serviceable_Storage_V9/TrolleyDrawer_3",
+      "internal_scope": "RBX00000000000000000000000070000A26",
+      "internal_parts_inside": 4,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000A41",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E06_Serviceable_Storage_V9/SoapDispenser_Serviceable",
+      "internal_scope": "RBX00000000000000000000000070000A41",
+      "internal_parts_inside": 1,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070000A51",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Engineering_Rework_V9/E06_Serviceable_Storage_V9/PaperTowelCabinet_Serviceable",
+      "internal_scope": "RBX00000000000000000000000070000A51",
+      "internal_parts_inside": 1,
+      "filled_collision_proxies": []
+    }
+  ],
+  "service_panels": 31,
+  "service_sweep_samples_per_mover": 9,
+  "service_sweep_architecture_candidates": [],
+  "service_panels_opening_into_own_cavity": [],
+  "standing_body_corridors": [
+    {
+      "name": "E03_south_approach",
+      "bounds": [
+        [
+          -1.25,
+          1.25
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -22,
+          -7
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E06_central_route",
+      "bounds": [
+        [
+          58.6,
+          61.4
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -68.3,
+          -47.7
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E07_working_aisle",
+      "bounds": [
+        [
+          -39.65,
+          -36.25
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -54.8,
+          -44.5
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E10_central_route",
+      "bounds": [
+        [
+          152.6,
+          155.4
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -33.8,
+          33.8
+        ]
+      ],
+      "obstructions": []
+    },
+    {
+      "name": "E16_entry_approach",
+      "bounds": [
+        [
+          -1.35,
+          1.35
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          52.5,
+          61.0
+        ]
+      ],
+      "obstructions": []
+    }
+  ],
+  "original_click_targets_checked": 195,
+  "new_solid_vs_original_click_target_candidates": [],
+  "limitations": [
+    "Corridor boxes are representative routes, not a full Humanoid navigation test.",
+    "Click-target checks detect volume overlap, not line-of-sight changes during animation.",
+    "Cylinders and meshes use conservative oriented bounding boxes."
+  ],
+  "errors": []
+}
