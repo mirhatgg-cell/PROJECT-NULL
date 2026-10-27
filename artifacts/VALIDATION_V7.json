@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "validation": "Static XML, preservation and geometry checks only; no Roblox Studio execution",
+  "source_sha256": "99edfbf9545e04bf0315deb46e4140a1a4d433ce09d3b34a7491da9ca1edb0b9",
+  "output_sha256": "1a5c469cb249ea8de2344deb1f153a3c14de4f1d0f8e98b990269f24470a3084",
+  "original_instances_preserved": 7245,
+  "original_properties_unchanged": true,
+  "original_hierarchy_preserved": true,
+  "original_scripts_preserved": 3,
+  "original_click_detectors_preserved": 195,
+  "before_baseparts": 5847,
+  "after_baseparts": 6139,
+  "added_baseparts": 292,
+  "added_part_percent": 4.99,
+  "groups": {
+    "E03_Immersion_Detail": 116,
+    "E04_Operator_Detail": 81,
+    "E06_Medical_Detail": 95
+  },
+  "unresolved_references": 0,
+  "new_collidable_or_queryable_parts": 0,
+  "new_parts_in_checked_door_openings": 0,
+  "room_envelopes_checked": [
+    "E03_Immersion_Detail",
+    "E04_Operator_Detail",
+    "E06_Medical_Detail"
+  ]
+}
