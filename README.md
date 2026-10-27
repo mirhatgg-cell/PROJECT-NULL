@@ -1,4 +1,31 @@
-# PROJECT: NULL — V7, визуальная детализация
+# PROJECT: NULL — V8, экспериментальное оборудование
+
+Текущая карта: [PROJECT_NULL_EXPERIMENTAL_V8.rbxlx](artifacts/PROJECT_NULL_EXPERIMENTAL_V8.rbxlx). Содержит исходный V6, оформление V7 и следующий проход по этапу 3 из описания проекта.
+
+В V8 добавлены 386 деталей в трёх зонах: метрологический стенд E-07, опорные приборы и оптические головки физической камеры E-10, кабельная и охлаждающая инфраструктура аппаратной E-16. Это визуальные модели специализированного оборудования; прежние интерактивные системы сохранены. Новые игровые измерения, эксперименты и механики в этом проходе не реализованы.
+
+- [Архив V8 с картой, исходниками и инструкциями](artifacts/PROJECT_NULL_V8_REVIEW.zip).
+- [Сравнение геометрии V7/V8](artifacts/PROJECT_NULL_V8_COMPARISON.png).
+- [Карточки оборудования и критерии приёмки](docs/STAGE3_V8.md).
+- [Проверка структуры и проёмов](artifacts/VALIDATION_V8.json), [проверка пересечений](artifacts/GEOMETRY_AUDIT_V8.json).
+
+Открыть готовую карту через **File → Open from File** в Roblox Studio. Новые модели находятся в `Workspace → PROJECT_NULL_ARCH_P01 → Equipment → Experimental_Equipment_V8`; выбрать группу или отдельный стенд и нажать **F** для наведения камеры.
+
+Для переноса в собственный V7 с локальными изменениями можно выполнить весь текст [INSTALL_V8_COMMAND_BAR.luau](artifacts/INSTALL_V8_COMMAND_BAR.luau) через **View → Command Bar** при остановленном Play. Установщик создаёт только новую группу; при её наличии останавливается. Сетевых запросов нет, есть запись Undo. В архив также включена отдельная модель [PROJECT_NULL_STAGE3_V8.rbxmx](artifacts/PROJECT_NULL_STAGE3_V8.rbxmx); её корневую группу после импорта следует поместить внутрь `Equipment`. Для готовой карты дополнительная установка не требуется.
+
+Повторить этап 3 из корня репозитория:
+
+```sh
+python3 tools/build_v8.py
+python3 tools/validate_v8.py
+python3 tools/audit_v8_geometry.py --strict
+python3 tools/export_studio_installer.py --version 8
+python3 tools/render_v8.py
+```
+
+Сборка, структурная проверка и экспорт установщика используют стандартную библиотеку Python. Для геометрического аудита и превью нужны NumPy/Matplotlib из `tools/requirements-preview.txt`. Установщик проверяется командой `python3 tools/test_studio_installer.py --version 8` с отдельно установленным `lupa==2.6`. В этой среде выполнены статические проверки и тесты переноса в имитации Roblox API; запуск, освещение и производительность в Studio ещё требуют проверки.
+
+## V7 — предыдущий проход визуальной детализации
 
 Готовый файл: [PROJECT_NULL_INTERIORS_V7_DETAIL.rbxlx](artifacts/PROJECT_NULL_INTERIORS_V7_DETAIL.rbxlx).
 

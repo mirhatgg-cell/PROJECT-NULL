@@ -7,6 +7,7 @@ locally by HttpService:JSONDecode; the installer makes no HTTP requests.
 from __future__ import annotations
 
 from collections import Counter
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -67,8 +68,9 @@ def palette_rgb(packed):
 
 def export_data(subtree):
     classes = Counter(e.get("class") for e in subtree.iter("Item"))
-    assert classes == {"Model": 15, "Part": 292, "StringValue": 6,
-                       "SurfaceGui": 16, "TextLabel": 16}, classes
+    assert set(classes) <= {"Model", "Part", "StringValue", "SurfaceGui", "TextLabel"}, classes
+    assert classes["Model"] > 0 and classes["Part"] > 0
+    assert classes["SurfaceGui"] == classes["TextLabel"], classes
     data = {k: [] for k in ("models", "names", "sizes", "colors", "materials", "rotations", "parts", "notes", "labels")}
     groups = {cls: [e for e in subtree.iter("Item") if e.get("class") == cls]
               for cls in classes}
@@ -264,20 +266,42 @@ print("PROJECT: NULL V7 installed: 292 decorative parts. Press F to focus; Undo 
 
 
 def main():
-    tree = ET.parse(SOURCE)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--version", choices=(7, 8), type=int, default=7)
+    args = parser.parse_args()
+    version = args.version
+    source = SOURCE if version == 7 else ROOT/"artifacts/PROJECT_NULL_EXPERIMENTAL_V8.rbxlx"
+    output = OUTPUT if version == 7 else ROOT/"artifacts/INSTALL_V8_COMMAND_BAR.luau"
+    model_name = "Visual_Detail_V7" if version == 7 else "Experimental_Equipment_V8"
+    tree = ET.parse(source)
     subtree = next(e for e in tree.getroot().iter("Item")
-                   if e.findtext("Properties/string[@name='Name']") == "Visual_Detail_V7")
+                   if e.findtext("Properties/string[@name='Name']") == model_name)
     data, expected = export_data(subtree)
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     assert "]==]" not in payload
     loaded = json.loads(payload)
     actual = decode_records(loaded)
     assert expected == actual, "Exported property/hierarchy roundtrip failed"
-    script = TEMPLATE.replace("__PAYLOAD__", payload)
+    template = TEMPLATE
+    if version == 8:
+        template = template.replace("Visual_Detail_V7", model_name).replace("V7", "V8")
+        template = template.replace("[2]=Enum.NormalId.Back, [5]", "[2]=Enum.NormalId.Back, [3]=Enum.NormalId.Left, [4]=Enum.NormalId.Bottom, [5]")
+        # The common XML label helper retains its V7_Legend internal name.
+        template = template.replace('create("SurfaceGui", "V8_Legend")', 'create("SurfaceGui", "V7_Legend")')
+        template = template.replace("Existing V6 objects", "Existing V7 objects")
+        template = template.replace("Open PROJECT_NULL_INTERIORS_V6 first.", "Open PROJECT_NULL_INTERIORS_V7_DETAIL first.")
+        template = template.replace("The V6 Equipment model", "The V7 Equipment model")
+        template = template.replace("#d.models == 15 and #d.parts == 292 and #d.notes == 6 and #d.labels == 16",
+                                    f"#d.models == {len(loaded['models'])} and #d.parts == {len(loaded['parts'])} and #d.notes == {len(loaded['notes'])} and #d.labels == {len(loaded['labels'])}")
+        template = template.replace("#objects == 345 and #parts == 292", f"#objects == {len(actual)} and #parts == {len(loaded['parts'])}")
+        template = template.replace("installed: 292 decorative parts", f"installed: {len(loaded['parts'])} specialized equipment parts")
+        template = template.replace('local history = game:GetService("ChangeHistoryService")',
+                                    'assert(equipment:FindFirstChild("Visual_Detail_V7"), "V7 details are required before installing V8.")\nlocal history = game:GetService("ChangeHistoryService")')
+    script = template.replace("__PAYLOAD__", payload)
     assert "__PAYLOAD__" not in script
     assert script.count("JSONDecode") == 2
-    OUTPUT.write_text(script, encoding="utf-8")
-    print(json.dumps({"output": str(OUTPUT), "bytes": len(script.encode("utf-8")),
+    output.write_text(script, encoding="utf-8")
+    print(json.dumps({"output": str(output), "bytes": len(script.encode("utf-8")),
                       "payload_bytes": len(payload.encode("utf-8")),
                       "instances": len(actual), "parts": len(loaded["parts"]),
                       "property_and_parent_roundtrip": "PASS",

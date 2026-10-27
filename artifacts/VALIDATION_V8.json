@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "stage": 3,
+  "validation": "Static XML and geometry only; Roblox Studio execution still required",
+  "source_sha256": "1a5c469cb249ea8de2344deb1f153a3c14de4f1d0f8e98b990269f24470a3084",
+  "output_sha256": "a666e94bbb671a4a82a5117682d1b71e8c15beb200238cae6aceab41a511f09e",
+  "preserved_instances": 7590,
+  "original_properties_and_hierarchy_unchanged": true,
+  "preserved_scripts": 3,
+  "preserved_click_detectors": 195,
+  "before_baseparts": 6139,
+  "after_baseparts": 6525,
+  "added_baseparts": 386,
+  "part_increase_percent": 6.29,
+  "groups": {
+    "E07_Metrology": 105,
+    "E10_Experimental_Equipment": 153,
+    "E16_Server_Infrastructure": 128
+  },
+  "broken_references": 0,
+  "new_collidable_or_queryable_parts": 0,
+  "door_leaf_travel_volumes_checked": 20,
+  "standalone_model_matches": true
+}

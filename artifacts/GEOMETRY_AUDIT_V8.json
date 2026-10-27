@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "validation": "Static OBB SAT geometry audit; no Roblox Studio rendering or avatar traversal",
+  "shape_limit": "All parts use oriented box bounds; cylinders/meshes can produce conservative candidates",
+  "source_sha256": "1a5c469cb249ea8de2344deb1f153a3c14de4f1d0f8e98b990269f24470a3084",
+  "target_sha256": "a666e94bbb671a4a82a5117682d1b71e8c15beb200238cae6aceab41a511f09e",
+  "source_baseparts": 6139,
+  "new_baseparts": 386,
+  "original_visible_baseparts": 6050,
+  "original_hidden_collision_boxes_excluded": 89,
+  "original_click_targets_checked": 195,
+  "original_display_carriers_checked": 152,
+  "threshold_studs": 0.025,
+  "broad_phase_pairs": 0,
+  "overlap_candidates": 0,
+  "unreviewed_candidates": 0,
+  "active_control_or_display_candidates": 0,
+  "candidates_by_group": {},
+  "unused_allowances": [],
+  "overlaps": []
+}

@@ -5,6 +5,7 @@ Install test dependency separately: pip install lupa==2.6
 """
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -169,12 +170,23 @@ def compare(expected, actual):
 
 
 def main():
-    script = (ROOT/'artifacts/INSTALL_V7_COMMAND_BAR.luau').read_text()
-    expected = next(e for e in ET.parse(ROOT/'artifacts/PROJECT_NULL_INTERIORS_V7_DETAIL.rbxlx').iter('Item') if e.findtext("Properties/string[@name='Name']") == 'Visual_Detail_V7')
-    lua = runtime()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--version',type=int,choices=(7,8),default=7)
+    version=parser.parse_args().version
+    script = (ROOT/f'artifacts/INSTALL_V{version}_COMMAND_BAR.luau').read_text()
+    model_name='Visual_Detail_V7' if version==7 else 'Experimental_Equipment_V8'
+    model_file='PROJECT_NULL_INTERIORS_V7_DETAIL.rbxlx' if version==7 else 'PROJECT_NULL_EXPERIMENTAL_V8.rbxlx'
+    expected = next(e for e in ET.parse(ROOT/'artifacts'/model_file).iter('Item') if e.findtext("Properties/string[@name='Name']") == model_name)
+    def fixture(**flags):
+        lua=runtime(**flags)
+        if version==8:
+            lua.execute("local v7=Instance.new('Model',_equipment);v7.Name='Visual_Detail_V7'")
+        return lua
+    baseline_children=1 if version==7 else 2
+    lua = fixture()
     lua.execute(script)
     g=lua.globals()
-    added=g._equipment.FindFirstChild(g._equipment,'Visual_Detail_V7')
+    added=g._equipment.FindFirstChild(g._equipment,model_name)
     assert added is not None, 'Installer did not publish new model'
     compare(expected,added)
     assert not g._sentinel._destroyed and lua.eval('_sentinel.Parent == _equipment')
@@ -182,15 +194,21 @@ def main():
     count=len(g._created)
     try: lua.execute(script)
     except Exception: pass
-    assert len(g._equipment._children)==2 and len(g._created)==count, 'Duplicate run changed existing map'
+    assert len(g._equipment._children)==baseline_children+1 and len(g._created)==count, 'Duplicate run changed existing map'
     # Verify denied execution and transaction failures leave the V6 fixture intact.
     for flags in ({'studio':False},{'running':True},{'deny':True},{'failcommit':True}):
-        lua=runtime(**flags);g=lua.globals()
+        lua=fixture(**flags);g=lua.globals()
         try: lua.execute(script)
         except Exception: pass
-        assert len(g._equipment._children)==1 and not g._sentinel._destroyed, flags
+        assert len(g._equipment._children)==baseline_children and not g._sentinel._destroyed, flags
         assert not g._recording,flags
-    print('PASS: Lua syntax, 345-instance/property transfer, duplicate guard, edit-mode guards, recording denial and failed-commit cleanup (mock APIs only).')
+    if version==8:
+        lua=runtime();g=lua.globals()
+        try: lua.execute(script)
+        except Exception: pass
+        assert len(g._equipment._children)==1 and len(g._created)==5, 'Missing V7 guard failed'
+    count=sum(1 for _ in expected.iter('Item'))
+    print(f'PASS V{version}: Lua syntax, {count}-instance/property transfer, duplicate guard, edit-mode guards, recording denial and failed-commit cleanup (mock APIs only).')
 
 
 if __name__ == '__main__': main()

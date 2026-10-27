@@ -140,7 +140,7 @@ def room_faces(parts, bounds):
     return result
 
 
-def draw_room(ax, parts, bounds, row_title, version):
+def draw_room(ax, parts, bounds, row_title, version, updated=None):
     xmin, xmax, ymin, ymax, zmin, zmax = bounds
     center = np.array([(xmin+xmax)/2, ymin, (zmin+zmax)/2]) @ PROJECTION
     faces = room_faces(parts, bounds)
@@ -161,8 +161,10 @@ def draw_room(ax, parts, bounds, row_title, version):
     ax.set_facecolor("#f2f5f6")
     ax.text(.025,.98,row_title,transform=ax.transAxes,va="top",fontsize=12,
             fontweight="bold",color="#243d49")
+    if updated is None:
+        updated = version.startswith("V7")
     ax.text(.98,.98,version,transform=ax.transAxes,ha="right",va="top",
-            fontsize=10,fontweight="bold",color="#207c84" if version.startswith("V7") else "#677983")
+            fontsize=10,fontweight="bold",color="#207c84" if updated else "#677983")
     return len(faces)
 
 
