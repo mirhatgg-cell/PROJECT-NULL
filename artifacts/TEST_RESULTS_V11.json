@@ -1,0 +1,78 @@
+{
+  "result": "PASS",
+  "map_sha256": "1ce3d610f385723a759c65496f32b32073daac8770b50f2362935f59b79fa135",
+  "checks": [
+    {
+      "name": "V11 XML / geometry / preserved laboratory rules",
+      "passed": true,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"new_parts\": 2930,\n  \"new_primary_colliders\": 1751,\n  \"registered_cavities\": 43,\n  \"document_count\": 29,\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "Original five protocol rules",
+      "passed": true,
+      "stdout": "PASS: P01 complete / cue privacy / immutable terminal state\nPASS: P02 complete / cue privacy / immutable terminal state\nPASS: P03 complete / cue privacy / immutable terminal state\nPASS: P04 complete / cue privacy / immutable terminal state\nPASS: P05 complete / cue privacy / immutable terminal state\nPASS: Wrong procedure stops each experiment; damage emitted once\nPASS: Exclusive ownership / actor validation / malformed responses / safe abort\nPASS: Disconnected owner interruption / recovery by another player\nPASS: Circuit requirements match each protocol before and during a run\nPASS: Missed deadline trips once, including a large server time jump\nPASS: Thermal trip / bounded damage / cooling and safe temperature recovery\nPASS: Finite supplies / physical resupply / repair and medical costs\nPASS: P04 actual movement guard, real stillness and real-step requirement\nPASS: Non-finite time rejection / bounded dt / bounded copied records\nV10 experiment core: 14 scenario groups passed (actual Lua source).\n",
+      "stderr": ""
+    },
+    {
+      "name": "Existing server integration regressions",
+      "passed": true,
+      "stdout": "PASS: test_prompt_authorization\nPASS: test_remote_context_and_owner\nPASS: test_untrusted_payloads_and_supply\nPASS: test_documents_are_discovered_locally\nPASS: test_circuit_trip_death_and_bounded_damage\nPASS: test_staff_reacts_to_actual_state\nPASS: test_p02_requires_physical_sensor\nPASS: test_p04_observes_real_movement\nPASS: test_persistence_merge_and_idempotent_save\nPASS: test_persistence_read_failure_never_overwrites\nPASS: test_persistence_delayed_load_merges_discovery\nPASS: test_persistence_write_failure_and_autosave\nPASS: test_persistence_departure_and_shutdown\nPASS: test_delayed_load_departure_and_shutdown\nPASS: test_completion_record_and_pending_save_changes\nPASS: test_offline_status_is_honest\nPASS: test_p03_requires_discovered_independent_evidence\nPASS: test_physical_experiment_feedback\nPASS: test_unused_console_reservation_releases_safely\nPASS: test_terminal_reservation_release_preserves_results\nPASS: test_studio_negative_userids_play_without_persistent_writes\nPASS: actual V10 server + core integration in mocked Roblox APIs; Studio acceptance remains necessary.\n",
+      "stderr": ""
+    },
+    {
+      "name": "V11 server/dialogue/profile integration",
+      "passed": true,
+      "stdout": "PASS: test_branching_dialogue_preserves_conversation_greeting\nPASS: test_dialogue_conditions_are_server_owned\nPASS: test_dialogue_access_close_death_and_range\nPASS: test_dialogue_choice_cooldown_and_close_action\nPASS: test_document_gates_and_private_content\nPASS: test_met_staff_uses_existing_save_merge\nPASS: test_director_and_ocean_lifecycle_wiring\nV11 integration: actual server, experiment core and dialogue passed; NPC Director and ocean bootstrap were lifecycle spies, not engine simulations.\n",
+      "stderr": ""
+    },
+    {
+      "name": "Conditional dialogue module",
+      "passed": true,
+      "stdout": "PASS: all 19 legacy documents preserved; 10 new documents have provenance and bounded claims\nPASS: all six staff support first/repeat meetings, topics, return, close and private evidence branches\nPASS: dialogue reactions follow the current procedure phase\nPASS: forged nodes/options, malformed choices and cyclic/deep rules are rejected\nPASS: later documents need context, with two valid exploration routes\nPASS: evaluator does not mutate profile or impersonate a completed game action\n",
+      "stderr": ""
+    },
+    {
+      "name": "Six articulated rigs and actual NPC director",
+      "passed": true,
+      "stdout": "PASS: six connected R6 rigs, exact rest joints, Animator, physical bodies, distinct local skins and retained old head prompts\nPASS: actual director creates one scheduler state and role-specific replicated joint poses\nPASS: fixed-station work poses stop away from equipment and resume after physical return\nPASS: live/near conversation guards, player attention, close and actual alarm pose switching\nPASS: actual bounded PathfindingService request, Humanoid MoveTo, walk pose and reached-waypoint return\nPASS: blocked path stops physical movement without teleporting or retry storm\nPASS: stuck/no-route detection and bounded retry cooldown\nPASS: global maximum two pending paths and safe teardown while asynchronous computation returns\nPASS: rest-pose restoration, idempotent cleanup and invalid-time handling\nV11 NPC checks: PASS; real Roblox character physics, pathfinding mesh and appearance remain Studio acceptance tests.\n",
+      "stderr": ""
+    },
+    {
+      "name": "Native ocean bootstrap and circuit-light adapter",
+      "passed": true,
+      "stdout": "PASS: actual ocean module native water, bounds, idempotence, cleanup, missing Terrain, server guard and existing-circuit luminaires.\n",
+      "stderr": ""
+    },
+    {
+      "name": "Single HUD / procedures / dialogue / mobile layouts",
+      "passed": true,
+      "stdout": "PASS: actual operator client, all five protocol evidence views, physical/mobile gates,\n      branching dialogue requests and close/retry, health/location, journal, transitions and cleanup.\n",
+      "stderr": ""
+    },
+    {
+      "name": "Byte-identical repeat build",
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "name": "Generated Content equals authored narrative",
+      "passed": true
+    },
+    {
+      "name": "Actual embedded ocean fill configuration accepted",
+      "passed": true,
+      "fill_boxes": 38
+    }
+  ],
+  "source_sha256": {
+    "src/Dialogue_V11.luau": "a7d1ff65eaa9fb11a1e9b81b25bb0ea9c64953b4a95dafdcc79049d50ace9125",
+    "src/ExperimentCore_V10.luau": "a7f23525c99dbd5064364f1fbf0afd5ec9e2c00bc34a29b85cb2db33daeae731",
+    "src/NPCDirector_V11.luau": "db9e87954298e52d73eefd9843d1c608fb644f0d35c2cd0d965bcad248f3d107",
+    "src/OceanEnvironment_V11.luau": "aceda56b2737eb913777d943c974bcca5f71d51e323925ec03879ff8e7e227d5",
+    "src/ProjectNullClient_V10.client.luau": "eadf001aeeefe913fa656d956a8aacb062e1ebae39fbc3ee18f8c9fcc770535e",
+    "src/ProjectNullServer_V10.server.luau": "e3d66beb1983a6842417ca396a6868721c5629e6d51fc1b748a6694cd21f81f5",
+    "src/ServiceController_V9.server.luau": "d6e23bdfcd84673d03852d85efe40e835e31aadf2ff108389f033d6cf606f948"
+  },
+  "limitations": "Real Lua executed with Roblox API doubles. No Studio rendering, character physics, navigation mesh, animation replication, terrain voxel performance, real networking, live DataStore or FPS test."
+}

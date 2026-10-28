@@ -1,4 +1,4 @@
--- PROJECT: NULL V10 — Russian operator interface, journal and bounded local effects.
+-- PROJECT: NULL — one operator HUD, character dialogue, journal and local effects.
 -- All gameplay changes are requests. The server owns experiments, health and saves.
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -7,6 +7,7 @@ local Lighting = game:GetService("Lighting")
 local SoundService = game:GetService("SoundService")
 local TextService = game:GetService("TextService")
 local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui", 30)
@@ -67,6 +68,17 @@ local lastCueKey, lastPhase = "", ""
 local modalSignature, cueSignature = "", ""
 local noticeUntil = 0
 local connections = {}
+local activeTweens = setmetatable({}, {__mode = "k"})
+local dialoguePending, dialogueWaitUntil = false, 0
+local dialogueButtons = {}
+
+-- The same client works with the preserved V10 file and the expanded ship.
+local worldRooms = {}
+local configModule = remotes:FindFirstChild("WorldConfig")
+if configModule and configModule:IsA("ModuleScript") then
+    local ok, config = pcall(require, configModule)
+    if ok and type(config) == "table" and type(config.rooms) == "table" then worldRooms = config.rooms end
+end
 
 local screen = make("ScreenGui", playerGui, {
     Name = "ProjectNullV10", ResetOnSpawn = false, IgnoreGuiInset = false,
@@ -75,7 +87,20 @@ local screen = make("ScreenGui", playerGui, {
 local root = make("Frame", screen, {Name = "Root", Size = UDim2.fromScale(1, 1), BackgroundTransparency = 1})
 local function corner(object, radius) make("UICorner", object, {CornerRadius = UDim.new(0, radius or 6)}) end
 local function border(object, color)
-    make("UIStroke", object, {Color = color or C.border, Thickness = 1, Transparency = 0.2})
+    return make("UIStroke", object, {Color = color or C.border, Thickness = 1, Transparency = 0.2})
+end
+local function animate(object, properties, duration)
+    local previous = activeTweens[object]
+    if previous then pcall(function() previous:Cancel() end) end
+    local ok, tween = pcall(function()
+        return TweenService:Create(object, TweenInfo.new(duration or .14, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), properties)
+    end)
+    if ok then
+        activeTweens[object] = tween
+        tween:Play()
+    else
+        for key, value in pairs(properties) do object[key] = value end
+    end
 end
 local function label(parent, text, size, color, height)
     local item = make("TextLabel", parent, {
@@ -95,24 +120,41 @@ local function block(parent, text, size, color)
 end
 local function send(action, argument)
     local now = os.clock()
-    if now - (lastRequest[action] or -10) < 0.18 then return end
+    if now - (lastRequest[action] or -10) < 0.18 then return false end
     lastRequest[action] = now
     request:FireServer(action, argument)
+    return true
 end
 local function button(parent, text, callback, color)
     local item = make("TextButton", parent, {
         Name = "Action", Size = UDim2.new(1, 0, 0, 40), BackgroundColor3 = C.raised,
         BorderSizePixel = 0, Text = text, Font = Enum.Font.Code, TextSize = 14,
-        TextColor3 = color or C.text, AutoButtonColor = true, TextWrapped = true, RichText = false,
+        TextColor3 = color or C.text, AutoButtonColor = false, TextWrapped = true, RichText = false,
     })
     corner(item, 4)
-    item.Activated:Connect(callback)
+    border(item, C.border)
+    local function highlight()
+        if item.Active ~= false then animate(item, {BackgroundColor3 = C.surface}, .12) end
+    end
+    local function restore() animate(item, {BackgroundColor3 = C.raised}, .12) end
+    item.MouseEnter:Connect(highlight)
+    item.MouseLeave:Connect(restore)
+    item.SelectionGained:Connect(highlight)
+    item.SelectionLost:Connect(restore)
+    item.Activated:Connect(function()
+        if item.Active ~= false then callback() end
+    end)
+    item.Destroying:Connect(function()
+        local tween = activeTweens[item]
+        if tween then pcall(function() tween:Cancel() end) end
+        activeTweens[item] = nil
+    end)
     return item
 end
 local function enabled(item, value)
     item.Active = value
     item.Selectable = value
-    item.AutoButtonColor = value
+    item.AutoButtonColor = false
     item.TextTransparency = value and 0 or 0.58
     item.BackgroundTransparency = value and 0 or 0.45
 end
@@ -165,6 +207,28 @@ local function play(sound)
     end
 end
 
+local status = make("Frame", root, {
+    Name = "LocalStatus", Position = UDim2.fromOffset(12, 12),
+    Size = UDim2.fromOffset(302, 76), BackgroundColor3 = C.background, BackgroundTransparency = .1,
+})
+corner(status); border(status)
+make("Frame", status, {Name = "IdentityRail", Size = UDim2.new(0, 3, 1, 0), BackgroundColor3 = C.cyan, BorderSizePixel = 0})
+local locationText = label(status, "КОМПЛЕКС / ОПРЕДЕЛЕНИЕ ЗОНЫ", 12, C.cyan, 24)
+locationText.Name = "StationLocation"
+locationText.Position = UDim2.fromOffset(12, 9)
+locationText.Size = UDim2.new(1, -24, 0, 24)
+local healthText = label(status, "СОСТОЯНИЕ ПЕРСОНАЖА —", 12, C.muted, 19)
+healthText.Name = "CharacterHealth"
+healthText.Position = UDim2.fromOffset(12, 36)
+healthText.Size = UDim2.new(1, -24, 0, 19)
+local healthTrack = make("Frame", status, {
+    Position = UDim2.fromOffset(12, 61), Size = UDim2.new(1, -24, 0, 4),
+    BackgroundColor3 = C.raised, BorderSizePixel = 0,
+})
+local healthFill = make("Frame", healthTrack, {
+    Name = "HealthFill", Size = UDim2.fromScale(0, 1), BackgroundColor3 = C.green, BorderSizePixel = 0,
+})
+
 local hud = make("Frame", root, {
     Name = "Telemetry", AnchorPoint = Vector2.new(1, 0), Position = UDim2.new(1, -12, 0, 12),
     Size = UDim2.fromOffset(300, 188), BackgroundColor3 = C.background, BackgroundTransparency = 0.1,
@@ -201,6 +265,8 @@ local journalButton = button(quick, "ЖУРНАЛ [J]", function()
         currentModal = nil
         send("close")
     else
+        if currentModal and currentModal.kind == "npc" then send("close") end
+        dialoguePending = false
         currentModal = {kind = "journal", title = "ЛИЧНЫЙ ЖУРНАЛ"}
     end
     modalSignature = ""
@@ -231,10 +297,86 @@ local toast = make("TextLabel", root, {
     RichText = false, Visible = false, ZIndex = 12,
 })
 corner(toast); border(toast, C.amber)
-local function notice(text)
+local function notice(text, level)
     toast.Text = tostring(text or "")
+    local warning = level == "warning" or level == "error"
+    toast.TextColor3 = warning and C.red or C.amber
+    toast.BackgroundColor3 = warning and C.background or C.surface
     toast.Visible = toast.Text ~= ""
     noticeUntil = os.clock() + 5
+end
+
+local fallbackRooms = {
+    {id="E01",label="Подготовка",bounds={-16,16,-67,-38,-76,-48}},
+    {id="E02",label="Шлюз",bounds={-8,8,-67,-38,-48,-24}},
+    {id="E03",label="Погружение",bounds={-24,24,-67,-35,-24,24}},
+    {id="E04",label="Операторская",bounds={-64,-24,-67,-38,-12,12}},
+    {id="E05",label="Восстановление",bounds={40,80,-67,-38,-24,8}},
+    {id="E06",label="Медицинский пост",bounds={46,74,-67,-38,-70,-46}},
+    {id="E07",label="Калибровка",bounds={-58,-30,-67,-38,-60,-36}},
+    {id="E08",label="Чистые материалы",bounds={46,78,-67,-38,51,79}},
+    {id="E09",label="Снятое оборудование",bounds={-52,-32,-67,-38,54,70}},
+    {id="E10",label="Физический зал",bounds={126,182,-67,-38,-36,36}},
+    {id="E11",label="Подготовка испытаний",bounds={138,170,-67,-38,-76,-48}},
+    {id="E12",label="Управление залом",bounds={186,218,-67,-38,-12,12}},
+    {id="E13",label="Хранение модулей",bounds={134,174,-67,-38,56,88}},
+    {id="E16",label="Аппаратная",bounds={-16,16,-67,-38,51,75}},
+}
+local function inRoom(position, room)
+    local bounds = room.bounds
+    return type(bounds) == "table" and #bounds == 6
+        and position.X >= bounds[1] and position.X <= bounds[2]
+        and position.Y >= bounds[3] and position.Y <= bounds[4]
+        and position.Z >= bounds[5] and position.Z <= bounds[6]
+end
+local wasCritical, lastHealthRatio = false, -1
+local function refreshLocalStatus()
+    local character = player.Character
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    local bodyRoot = character and character:FindFirstChild("HumanoidRootPart")
+    if bodyRoot and bodyRoot:IsA("BasePart") then
+        local position = bodyRoot.Position
+        local found
+        for _, rooms in ipairs({worldRooms, fallbackRooms}) do
+            for _, room in ipairs(rooms) do
+                if type(room) == "table" and inRoom(position, room) then found = room; break end
+            end
+            if found then break end
+        end
+        local deck = position.Y > -35 and "ВЕРХНЯЯ ПАЛУБА" or "ЛАБОРАТОРНЫЙ УРОВЕНЬ"
+        if found then
+            locationText.Text = tostring(found.id or "ОТСЕК") .. " / " .. tostring(found.label or found.name or deck)
+        elseif position.X >= -150 and position.X <= -93 and position.Y < -25 then
+            locationText.Text = "СЛУЖЕБНЫЙ ТРАП / ПЕРЕХОД УРОВНЕЙ"
+        elseif position.Y < -70 then
+            locationText.Text = "ЗАБОРТНАЯ ЗОНА / ВНЕ ПОМЕЩЕНИЙ"
+        else
+            locationText.Text = deck .. " / ОБЩИЙ МАРШРУТ"
+        end
+    else
+        locationText.Text = "КОМПЛЕКС / ОЖИДАНИЕ ПЕРСОНАЖА"
+    end
+    local health = humanoid and finite(humanoid.Health, nil)
+    local maximum = humanoid and finite(humanoid.MaxHealth, nil)
+    if health and maximum and maximum > 0 then
+        local ratio = clamp(health / maximum, 0, 1)
+        local critical = ratio > 0 and ratio <= .3
+        healthText.Text = health <= 0 and "НЕТ ПУЛЬСА / ОЖИДАНИЕ ВОССТАНОВЛЕНИЯ"
+            or string.format("%s / ЗДОРОВЬЕ %.0f / %.0f", critical and "ТРЕБУЕТСЯ ПОМОЩЬ" or "СОСТОЯНИЕ СТАБИЛЬНО", health, maximum)
+        healthText.TextColor3 = ratio <= .3 and C.red or C.muted
+        healthFill.BackgroundColor3 = ratio <= .3 and C.red or C.green
+        if math.abs(ratio - lastHealthRatio) > .001 then
+            animate(healthFill, {Size = UDim2.fromScale(ratio, 1)}, .2)
+            lastHealthRatio = ratio
+        end
+        if critical and not wasCritical then notice("Состояние ухудшилось. После остановки серии обратитесь в E06.", "warning") end
+        wasCritical = critical
+    else
+        healthText.Text = "СОСТОЯНИЕ ПЕРСОНАЖА —"
+        healthFill.Size = UDim2.fromScale(0, 1)
+        lastHealthRatio = -1
+        wasCritical = false
+    end
 end
 
 local overlay = make("Frame", root, {
@@ -246,6 +388,10 @@ local modal = make("Frame", overlay, {
     Size = UDim2.fromOffset(760, 530), BackgroundColor3 = C.background, BorderSizePixel = 0, ZIndex = 21,
 })
 corner(modal, 8); border(modal, C.cyan)
+local modalAccent = make("Frame", modal, {
+    Name = "ContextAccent", Position = UDim2.fromOffset(0, 0), Size = UDim2.new(0, 3, 1, 0),
+    BackgroundColor3 = C.cyan, BorderSizePixel = 0, ZIndex = 22,
+})
 local modalTitle = label(modal, "ОПЕРАТОРСКИЙ ТЕРМИНАЛ", 17, C.cyan, 30)
 modalTitle.Position = UDim2.fromOffset(18, 18)
 modalTitle.Size = UDim2.new(1, -88, 0, 45)
@@ -254,6 +400,7 @@ local closeButton = button(modal, "X", function()
     currentModal = nil
     overlay.Visible = false
     modalSignature = ""
+    dialoguePending = false
     send("close")
 end)
 closeButton.Size = UDim2.fromOffset(38, 36)
@@ -273,6 +420,20 @@ local modalFoot = label(modal, "СЛЕДУЙТЕ ПРОТОКОЛУ · E — В�
 modalFoot.Position = UDim2.new(0, 18, 1, -31)
 modalFoot.Size = UDim2.new(1, -36, 0, 24)
 modalFoot.ZIndex = 22
+local function layoutModal(kind)
+    local width = math.max(220, math.min(790, uiWidth - 24))
+    if kind == "npc" and uiWidth < 720 then
+        -- Conversations use an upper drawer; the lower touch controls remain free.
+        modal.AnchorPoint = Vector2.new(.5, 0)
+        modal.Position = UDim2.new(.5, 0, 0, 12)
+        modal.Size = UDim2.fromOffset(width, math.max(180, math.min(430, uiHeight * .58)))
+    else
+        modal.AnchorPoint = Vector2.new(.5, .5)
+        modal.Position = UDim2.fromScale(.5, .5)
+        modal.Size = UDim2.fromOffset(width, math.max(200, math.min(620, uiHeight - 94)))
+    end
+    bodyWidth = width - 54
+end
 
 local cuePanel = make("Frame", root, {
     Name = "ExperimentCue", AnchorPoint = Vector2.new(1, 1), Position = UDim2.new(1, -12, 1, -62),
@@ -303,7 +464,7 @@ make("UIListLayout", cueButtons, {FillDirection = Enum.FillDirection.Vertical, P
 for index, item in ipairs({cueText, cueEvidence, cueInstruction, cueButtons}) do item.LayoutOrder = index end
 local responseButtons = {}
 
-local consoleStatus
+local consoleStatus, dialogueStatus
 local function listDocuments(profile)
     local result = {}
     local present = {}
@@ -405,25 +566,68 @@ renderModal = function()
     overlay.Visible = true
     local profile = type(snapshot.profile) == "table" and snapshot.profile or {}
     local context = currentModal
-    local signature = table.concat({context.kind or "", context.argument or "", context.title or "", snapshot.phase or "", snapshot.experiment or "", tostring(snapshot.owner or ""), tostring(tableCount(profile.documents)), tostring(tableCount(profile.records)), tostring(profile.saveStatus or ""), tostring(tableCount(snapshot.evidenceRequired)), tostring(uiWidth)}, "|")
+    layoutModal(context.kind)
+    local detail = context.data or (context.kind == "npc" and dialogueCache[context.argument]) or {}
+    local optionKeys = {}
+    for _, option in ipairs(type(detail.options) == "table" and detail.options or {}) do
+        table.insert(optionKeys, tostring(option.id) .. ":" .. tostring(option.label))
+    end
+    local signature = table.concat({context.kind or "", context.argument or "", context.title or "", tostring(detail.node or ""), tostring(detail.text or ""), table.concat(optionKeys, ","), tostring(dialoguePending), snapshot.phase or "", snapshot.experiment or "", tostring(snapshot.owner or ""), tostring(tableCount(profile.documents)), tostring(tableCount(profile.records)), tostring(profile.saveStatus or ""), tostring(tableCount(snapshot.evidenceRequired)), tostring(uiWidth)}, "|")
     if signature == modalSignature then return end
     modalSignature = signature
-    clear(body); consoleStatus = nil
+    clear(body); consoleStatus = nil; dialogueStatus = nil; dialogueButtons = {}
     body.CanvasPosition = Vector2.new(0, 0)
     modalTitle.Text = tostring(context.title or "ТЕРМИНАЛ PROJECT: NULL")
+    modalAccent.BackgroundColor3 = context.kind == "npc" and C.green or (context.kind == "document" and C.amber or C.cyan)
     if context.kind == "console" then
         renderConsole(context)
     elseif context.kind == "document" then
         local doc = context.data or documents[context.argument] or context
         block(body, tostring(doc.title or context.title or "ДОКУМЕНТ"), 18, C.cyan)
         block(body, tostring(doc.id or context.argument or "") .. "  /  " .. tostring(doc.room or "Архив комплекса"), 12, C.muted)
+        if doc.author or doc.period then
+            block(body, (doc.author and ("Автор: " .. tostring(doc.author)) or "")
+                .. (doc.author and doc.period and "  ·  " or "")
+                .. (doc.period and tostring(doc.period) or ""), 12, C.muted)
+        end
         block(body, tostring(doc.body or "Текст документа не получен. Взаимодействуйте с оригиналом в помещении."), 16, C.text)
+        if type(doc.hypotheses) == "table" and #doc.hypotheses > 0 then
+            block(body, "ПРИМЕЧАНИЯ АВТОРА / ТРЕБУЮТ ПОДТВЕРЖДЕНИЯ", 12, C.amber)
+            for _, hypothesis in ipairs(doc.hypotheses) do block(body, tostring(hypothesis), 14, C.muted) end
+        end
         button(body, "К ЛИЧНОМУ ЖУРНАЛУ", function() openModal({kind = "journal", title = "ЛИЧНЫЙ ЖУРНАЛ"}) end, C.cyan)
     elseif context.kind == "npc" then
         local data = context.data or dialogueCache[context.argument] or context
-        block(body, tostring(data.name or context.title or "СОТРУДНИК"), 18, C.cyan)
+        local voices = {TECH = C.cyan, MEDIC = C.green, ENGINEER = C.amber,
+            SECURITY = C.red, ARCHIVIST = C.text, OPERATOR = C.cyan}
+        local accent = voices[context.argument] or C.cyan
+        modalAccent.BackgroundColor3 = accent
+        block(body, tostring(data.name or context.title or "СОТРУДНИК"), 20, accent)
         block(body, tostring(data.role or "Персонал комплекса"), 13, C.muted)
-        block(body, tostring(data.text or data.body or context.body or "Следуйте инструкции действующего протокола."), 16, C.text)
+        local spoken = block(body, tostring(data.text or data.body or context.body or "Связь с сотрудником устанавливается."), 17, C.text)
+        spoken.Name = "DialogueLine"
+        if type(data.options) == "table" and #data.options > 0 then
+            block(body, "ВАШ ОТВЕТ", 12, C.muted)
+            for index, option in ipairs(data.options) do
+                if index <= 8 and type(option) == "table" and type(option.id) == "string" and #option.id <= 40 then
+                    local choiceId = option.id
+                    local answer = button(body, tostring(option.label or "Продолжить"), function()
+                        if not dialoguePending and send("dialogue", choiceId) then
+                            dialoguePending = true
+                            dialogueWaitUntil = os.clock() + 2
+                            for _, existing in ipairs(dialogueButtons) do enabled(existing, false) end
+                            if dialogueStatus then dialogueStatus.Text = "ОЖИДАНИЕ ОТВЕТА" end
+                            play(clickSound)
+                        end
+                    end, accent)
+                    answer.Name = "DialogueChoice"
+                    enabled(answer, not dialoguePending)
+                    table.insert(dialogueButtons, answer)
+                end
+            end
+        end
+        dialogueStatus = block(body, dialoguePending and "ОЖИДАНИЕ ОТВЕТА" or "X — закончить разговор. Журнал доступен клавишей J.", 12, C.muted)
+        dialogueStatus.Name = "DialogueStatus"
     elseif context.kind == "journal" or context.kind == "records" then
         renderJournal()
     elseif context.kind == "cooling" then
@@ -452,9 +656,14 @@ renderModal = function()
     end
 end
 openModal = function(context)
+    local changingKind = not currentModal or currentModal.kind ~= context.kind
     currentModal = context
     modalSignature = ""
     renderModal()
+    if changingKind then
+        modal.BackgroundTransparency = .2
+        animate(modal, {BackgroundTransparency = 0}, .16)
+    end
 end
 
 local function observableEvidence(cue)
@@ -517,19 +726,24 @@ local function resizeCue()
         cuePanel.AnchorPoint = Vector2.new(1, 0)
         cuePanel.Position = UDim2.new(1, -12, 0, 12)
         cuePanel.Size = UDim2.fromOffset(width, math.min(contentHeight, 340, math.max(100, uiHeight * 0.45)))
+        quick.AnchorPoint = Vector2.new(0, 0)
+        quick.Position = UDim2.new(0, 12, 0, cuePanel.Size.Y.Offset + 20)
     else
         cuePanel.AnchorPoint = Vector2.new(1, 1)
         cuePanel.Position = UDim2.new(1, -12, 1, -62)
         cuePanel.Size = UDim2.fromOffset(width, math.min(math.max(220, contentHeight), math.max(180, uiHeight - 90)))
+        quick.AnchorPoint = Vector2.new(0, 1)
+        quick.Position = UDim2.new(0, 12, 1, -12)
     end
     -- A narrow display gives the actionable signal priority over duplicate HUD text.
     hud.Visible = not (uiWidth < 720 and cuePanel.Visible)
+    status.Visible = not (uiWidth < 720 and cuePanel.Visible)
 end
 local function updateCue()
     local cue = type(snapshot.cue) == "table" and snapshot.cue or nil
     local running = snapshot.phase == "running" and snapshot.owner == player.UserId
     cuePanel.Visible = running and cue ~= nil
-    if not cuePanel.Visible then cueSignature = ""; hud.Visible = true; return end
+    if not cuePanel.Visible then cueSignature = ""; hud.Visible = true; status.Visible = true; return end
     cueTitle.Text = tostring(snapshot.experiment or "P--") .. " / ЭТАП " .. tostring(snapshot.round or "—") .. "/" .. tostring(snapshot.totalRounds or "—")
     cueText.Text = tostring(cue.label or snapshot.objective or "Наблюдайте за показаниями.")
     cueEvidence.Text = observableEvidence(cue)
@@ -602,7 +816,7 @@ local function refreshSnapshot()
         consoleStatus.Size = UDim2.new(1, 0, 0, 86)
     end
     if lastPhase ~= snapshot.phase then
-        if snapshot.phase == "failed" then notice("АВАРИЙНАЯ ОСТАНОВКА. Проверьте причину и восстановите оборудование."); play(cueSound) end
+        if snapshot.phase == "failed" then notice("АВАРИЙНАЯ ОСТАНОВКА. Проверьте причину и восстановите оборудование.", "warning"); play(cueSound) end
         if snapshot.phase == "completed" then notice("ИСПЫТАНИЕ ЗАВЕРШЕНО. Результат добавлен в журнал."); play(cueSound) end
         lastPhase = snapshot.phase
     end
@@ -617,6 +831,7 @@ local function applyContext(context, force)
         if lastContextKey ~= "" and currentModal and currentModal.kind ~= "journal" then
             currentModal = nil
             overlay.Visible = false
+            dialoguePending = false
         end
         lastContextKey = ""
         return
@@ -637,7 +852,13 @@ connections[#connections + 1] = push.OnClientEvent:Connect(function(kind, payloa
         applyContext(payload.context, false)
         refreshSnapshot()
     elseif kind == "notice" then
-        notice(type(payload) == "table" and (payload.text or payload.message) or payload)
+        notice(type(payload) == "table" and (payload.text or payload.message) or payload,
+            type(payload) == "table" and payload.level or nil)
+        if dialoguePending then
+            dialoguePending = false
+            modalSignature = ""
+            renderModal()
+        end
     elseif kind == "context" and type(payload) == "table" then
         applyContext(payload, true)
     elseif kind == "document" and type(payload) == "table" and type(payload.id) == "string" then
@@ -645,6 +866,17 @@ connections[#connections + 1] = push.OnClientEvent:Connect(function(kind, payloa
         openModal({kind = "document", argument = payload.id, title = payload.title, data = payload})
     elseif kind == "dialogue" and type(payload) == "table" then
         local id = payload.id or payload.argument or payload.name or "staff"
+        dialoguePending = false
+        if payload.closed then
+            dialogueCache[id] = nil
+            if currentModal and currentModal.kind == "npc" and currentModal.argument == id then
+                currentModal = nil
+                overlay.Visible = false
+                modalSignature = ""
+                lastContextKey = ""
+            end
+            return
+        end
         dialogueCache[id] = payload
         openModal({kind = "npc", argument = id, title = payload.name, data = payload})
     end
@@ -655,13 +887,13 @@ local function resize()
     local view = camera and camera.ViewportSize or Vector2.new(1024, 720)
     uiWidth, uiHeight = view.X, view.Y
     local narrow = uiWidth < 720
-    local modalWidth = math.min(790, uiWidth - 24)
-    modal.Size = UDim2.fromOffset(modalWidth, math.max(200, math.min(620, uiHeight - 94)))
-    bodyWidth = modalWidth - 54
+    layoutModal(currentModal and currentModal.kind)
+    status.Size = UDim2.fromOffset(math.min(narrow and 366 or 302, uiWidth - 24), 76)
+    hud.Position = UDim2.new(1, -12, 0, narrow and 100 or 12)
     hud.Size = UDim2.fromOffset(math.min(narrow and 250 or 310, uiWidth - 24), 188)
     quick.Size = UDim2.fromOffset(math.min(410, uiWidth - 24), 38)
-    toast.Size = UDim2.fromOffset(math.min(500, uiWidth - 24), 52)
-    toast.Position = UDim2.new(0.5, 0, 0, narrow and 208 or 12)
+    toast.Size = UDim2.fromOffset(math.min(360, uiWidth - 24), 58)
+    toast.Position = UDim2.new(0.5, 0, 0, narrow and 298 or 12)
     cuePanel.Position = UDim2.new(1, -12, 1, -62)
     resizeCue()
     modalFoot.Text = narrow and "E — ДЕЙСТВИЕ · J — ЖУРНАЛ · X — ЗАКРЫТЬ" or "СЛЕДУЙТЕ ПРОТОКОЛУ · E — ВЗАИМОДЕЙСТВИЕ · J — ЖУРНАЛ"
@@ -670,13 +902,24 @@ local function resize()
 end
 local lastViewport = Vector2.new(0, 0)
 local accumulated = 0
+local localStatusElapsed = 0
 connections[#connections + 1] = RunService.Heartbeat:Connect(function(dt)
     accumulated = accumulated + dt
+    localStatusElapsed = localStatusElapsed + dt
     if accumulated < 0.12 then return end
     accumulated = 0
     local camera = workspace.CurrentCamera
     if camera and camera.ViewportSize ~= lastViewport then lastViewport = camera.ViewportSize; resize() end
     if toast.Visible and os.clock() >= noticeUntil then toast.Visible = false end
+    if localStatusElapsed >= .25 then
+        localStatusElapsed = 0
+        refreshLocalStatus()
+    end
+    if dialoguePending and os.clock() >= dialogueWaitUntil then
+        dialoguePending = false
+        modalSignature = ""
+        renderModal()
+    end
     local cue = type(snapshot.cue) == "table" and snapshot.cue or nil
     if cuePanel.Visible and cue then
         local serverNow = workspace:GetServerTimeNow()
@@ -704,16 +947,22 @@ connections[#connections + 1] = UserInputService.InputBegan:Connect(function(inp
     if input.KeyCode == Enum.KeyCode.J then
         if currentModal and currentModal.kind == "journal" then
             currentModal = nil; overlay.Visible = false; send("close")
-        else openModal({kind = "journal", title = "ЛИЧНЫЙ ЖУРНАЛ"}) end
+        else
+            if currentModal and currentModal.kind == "npc" then send("close") end
+            dialoguePending = false
+            openModal({kind = "journal", title = "ЛИЧНЫЙ ЖУРНАЛ"})
+        end
     elseif input.KeyCode == Enum.KeyCode.X and currentModal then
-        currentModal = nil; overlay.Visible = false; send("close")
+        currentModal = nil; overlay.Visible = false; dialoguePending = false; send("close")
     end
 end)
 script.Destroying:Connect(function()
     for _, connection in ipairs(connections) do connection:Disconnect() end
+    for _, tween in pairs(activeTweens) do pcall(function() tween:Cancel() end) end
     grade:Destroy(); blur:Destroy(); audioFolder:Destroy()
     if screen.Parent then screen:Destroy() end
 end)
 resize()
 refreshSnapshot()
+refreshLocalStatus()
 send("hello")

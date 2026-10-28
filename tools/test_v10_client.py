@@ -1,4 +1,4 @@
-"""Execute the actual V10 client with focused GUI/event Roblox API doubles.
+"""Execute the actual operator client with focused GUI/event Roblox API doubles.
 
 This checks UI state, protocol evidence and emitted requests, not Roblox rendering,
 asset playback, layout measurement, device input or client/server networking.
@@ -9,7 +9,7 @@ from lupa import LuaRuntime
 
 ROOT = Path(__file__).resolve().parents[1]
 MOCK = r'''
-_clock=100;_serverTime=100;_warnings={};_requests={};_soundsPlayed=0
+_clock=100;_serverTime=100;_warnings={};_requests={};_soundsPlayed=0;_tweensCreated=0;_tweensCancelled=0
 os.clock=function() return _clock end
 local function signal()
  local s={slots={}}
@@ -24,6 +24,7 @@ local function signal()
 end
 local vectorMeta={__eq=function(a,b) return a.X==b.X and a.Y==b.Y end}
 Vector2={new=function(x,y) return setmetatable({X=x,Y=y},vectorMeta) end}
+Vector3={new=function(x,y,z) return {X=x,Y=y,Z=z} end}
 UDim={new=function(scale,offset) return {Scale=scale,Offset=offset} end}
 UDim2={new=function(xs,xo,ys,yo) return {X=UDim.new(xs,xo),Y=UDim.new(ys,yo)} end}
 function UDim2.fromScale(x,y) return UDim2.new(x,0,y,0) end
@@ -51,17 +52,22 @@ end
 Instance={new=function(cls)
  local o=setmetatable({_class=cls,_children={},_props={Name=cls,Visible=true,Active=true,
   Activated=signal(),Destroying=signal(),OnClientEvent=signal(),Heartbeat=signal(),InputBegan=signal(),
+  MouseEnter=signal(),MouseLeave=signal(),SelectionGained=signal(),SelectionLost=signal(),
   Size=UDim2.fromOffset(0,0)}},instanceMeta)
  return o
 end}
 function methods:IsA(cls)
  local gui={Frame=true,TextLabel=true,TextButton=true,ScrollingFrame=true}
  return cls==self.ClassName or cls=='Instance' or (cls=='GuiObject' and gui[self.ClassName])
+  or (cls=='BasePart' and self.ClassName=='Part')
 end
 function methods:FindFirstChild(n)
  for _,child in ipairs(self._children) do if child.Name==n then return child end end
 end
 function methods:WaitForChild(n) return self:FindFirstChild(n) end
+function methods:FindFirstChildOfClass(cls)
+ for _,child in ipairs(self._children) do if child:IsA(cls) then return child end end
+end
 function methods:GetChildren() local out={};for i,c in ipairs(self._children) do out[i]=c end;return out end
 function methods:GetDescendants()
  local out={};local function visit(parent) for _,child in ipairs(parent:GetChildren()) do table.insert(out,child);visit(child) end end
@@ -84,21 +90,35 @@ function methods:GetTextSize(text,size,font,bounds)
  end
  return Vector2.new(bounds.X,maxLines*size)
 end
+TweenInfo={new=function(duration,style,direction) return {Time=duration,Style=style,Direction=direction} end}
+function methods:Create(object,info,properties)
+ assert(self.ClassName=='TweenService')
+ _tweensCreated=_tweensCreated+1
+ return {Play=function() for key,value in pairs(properties) do object[key]=value end end,
+  Cancel=function() _tweensCancelled=_tweensCancelled+1 end}
+end
 local function new(cls,parent,name)
  local o=Instance.new(cls);o.Name=name or cls;o.Parent=parent;return o
 end
 _player=new('Player',nil,'LocalPlayer');_player.UserId=123
 _playerGui=new('PlayerGui',_player,'PlayerGui')
+_character=new('Model',nil,'Character');_player.Character=_character
+_humanoid=new('Humanoid',_character,'Humanoid');_humanoid.Health=100;_humanoid.MaxHealth=100
+_bodyRoot=new('Part',_character,'HumanoidRootPart');_bodyRoot.Position=Vector3.new(0,-61,-62)
 _players=new('Players',nil,'Players');_players.LocalPlayer=_player
 _rs=new('ReplicatedStorage',nil,'ReplicatedStorage')
 local network=new('Folder',_rs,'ProjectNullV10')
+_worldConfig={rooms={{id='C04',label='Вахта безопасности',bounds={90,140,-31,-7,-60,-9}}}}
+local zoneModule=new('ModuleScript',network,'WorldConfig')
+require=function(module) assert(module==zoneModule);return _worldConfig end
 _request=new('RemoteEvent',network,'Request');_push=new('RemoteEvent',network,'Push')
 _run=new('RunService',nil,'RunService');_light=new('Lighting',nil,'Lighting')
 _sound=new('SoundService',nil,'SoundService');_text=new('TextService',nil,'TextService')
 _input=new('UserInputService',nil,'UserInputService')
+_tween=new('TweenService',nil,'TweenService')
 workspace=new('Workspace',nil,'Workspace');workspace.CurrentCamera={ViewportSize=Vector2.new(1024,720)}
 script=new('LocalScript',nil,'ProjectNullClient_V10')
-local services={Players=_players,ReplicatedStorage=_rs,RunService=_run,Lighting=_light,SoundService=_sound,TextService=_text,UserInputService=_input}
+local services={Players=_players,ReplicatedStorage=_rs,RunService=_run,Lighting=_light,SoundService=_sound,TextService=_text,UserInputService=_input,TweenService=_tween}
 game={GetService=function(_,n) assert(services[n],n);return services[n] end}
 warn=function(message) table.insert(_warnings,tostring(message)) end
 function tick_ui(seconds)
@@ -136,9 +156,11 @@ end
 '''
 
 
-def fixture():
+def fixture(preload=None):
     lua = LuaRuntime(unpack_returned_tuples=True)
     lua.execute(MOCK)
+    if preload:
+        lua.execute(preload)
     lua.execute((ROOT / "src/ProjectNullClient_V10.client.luau").read_text())
     return lua
 
@@ -149,6 +171,8 @@ def main():
     assert g._requests[1].action == 'hello'
     assert len(g._warnings) == 0
     assert g.find_gui('ProjectNullV10') is not None
+    assert g.find_gui('StationLocation').Text == 'E01 / Подготовка'
+    assert g.find_gui('CharacterHealth').Text == 'СОСТОЯНИЕ СТАБИЛЬНО / ЗДОРОВЬЕ 100 / 100'
 
     # Actual modal controls emit requests without inventing local experiment state.
     lua.execute("snapshot('idle','P01');click('ВЫБРАТЬ P01')")
@@ -263,6 +287,9 @@ def main():
         assert panel.Position.Y.Offset + panel.Size.Y.Offset <= 640 * .55
         assert g.find_gui('CueBody').ClassName == 'ScrollingFrame'
         assert g.find_gui('Telemetry').Visible is False
+        assert g.find_gui('LocalStatus').Visible is False
+        quick = g.find_gui('QuickControls')
+        assert quick.AnchorPoint.Y == 0 and quick.Position.Y.Offset >= panel.Size.Y.Offset + 12
 
     # Audio/effects toggles exercise callbacks (including local closure binding).
     lua.execute("click('ЗВУК: ВКЛ');click('ЭФФЕКТЫ: ВКЛ');tick_ui(.2)")
@@ -283,12 +310,89 @@ def main():
     lua.execute("_push.OnClientEvent:Fire('notice','Проверка сервера');tick_ui(6)")
     assert g.find_gui('Notice').Visible is False
 
+    # WorldConfig is optional data, while the Humanoid is the actual health source.
+    lua.execute("_bodyRoot.Position=Vector3.new(114,-25,-30);_humanoid.Health=20;tick_ui(.3)")
+    assert g.find_gui('StationLocation').Text == 'C04 / Вахта безопасности'
+    assert 'ТРЕБУЕТСЯ ПОМОЩЬ' in g.find_gui('CharacterHealth').Text
+    assert g.find_gui('HealthFill').Size.X.Scale == .2
+    assert g._humanoid.Health == 20, 'A HUD cannot heal or damage the character'
+    assert g.find_gui('Notice').Visible is True
+    assert g.find_gui('Notice').TextColor3.R > g.find_gui('Notice').TextColor3.G
+    lua.execute("_bodyRoot.Position=Vector3.new(-120,-47,0);_humanoid.Health=80;tick_ui(.3)")
+    assert 'СЛУЖЕБНЫЙ ТРАП' in g.find_gui('StationLocation').Text
+    assert 'СОСТОЯНИЕ СТАБИЛЬНО' in g.find_gui('CharacterHealth').Text
+    assert g.find_gui('HealthFill').Size.X.Scale == .8
+    lua.execute("_player.Character=nil;tick_ui(.3);_player.Character=_character;tick_ui(.3)")
+    assert g.find_gui('HealthFill').Size.X.Scale == .8, 'Respawn restores even an unchanged health ratio'
+    lua.execute("_bodyRoot.Position=Vector3.new(-44,-61,-48);tick_ui(.3)")
+    assert g.find_gui('StationLocation').Text == 'E07 / Калибровка'
+
+    # One conversation line is rendered at a time; a choice is only a server request.
+    lua.execute("""_push.OnClientEvent:Fire('dialogue',{id='TECH',argument='TECH',name='Илья Корнев',role='Техник смены',
+        node='intro',text='Я принял этот пост после отключения. Что именно вас интересует?',
+        options={{id='job',label='Что вы обслуживаете?'},{id='close',label='Вернусь позже'}}})""")
+    assert g.visible_text('Илья Корнев') and g.visible_text('Техник смены')
+    assert g.visible_text('Что вы обслуживаете?')
+    assert g.find_gui('Modal').Visible is True
+    assert g.find_gui('Panel').AnchorPoint.Y == 0
+    assert g.find_gui('Panel').Size.Y.Offset <= 640 * .58
+    before = len(g._requests)
+    lua.execute("tick_ui(.3);click('Что вы обслуживаете?');click('Что вы обслуживаете?')")
+    assert len(g._requests) == before + 1, 'Repeated taps cannot replay a pending choice'
+    assert g._requests[len(g._requests)].action == 'dialogue'
+    assert g._requests[len(g._requests)].arg == 'job'
+    assert g.visible_text('ОЖИДАНИЕ ОТВЕТА')
+
+    # Same NPC and context key still replace the prior node and its choices.
+    lua.execute("""_push.OnClientEvent:Fire('dialogue',{id='TECH',argument='TECH',name='Илья Корнев',role='Техник смены',
+        node='job',text='Проверяю силовой тракт и независимые регистраторы. За сводку отвечает оператор.',
+        options={{id='back',label='У меня другой вопрос'}}})""")
+    assert g.visible_text('Проверяю силовой тракт')
+    assert g.visible_text('У меня другой вопрос')
+    assert not g.visible_text('Что вы обслуживаете?')
+    lua.execute("tick_ui(.3);click('У меня другой вопрос');tick_ui(2.1)")
+    assert not g.visible_text('ОЖИДАНИЕ ОТВЕТА'), 'A lost response cannot leave all choices disabled forever'
+    lua.execute("""_push.OnClientEvent:Fire('dialogue',{id='TECH',argument='TECH',closed=true})""")
+    assert g.find_gui('Modal').Visible is False
+
+    # X closes the conversation; opening the local journal also ends the talk.
+    lua.execute("""_push.OnClientEvent:Fire('dialogue',{id='MEDIC',name='Анна Лебедева',role='Медицинское сопровождение',
+        node='repeat',text='Показания до и после серии сравнивают отдельно.',options={{id='health',label='Как прошёл осмотр?'}}})
+        tick_ui(.3);_input.InputBegan:Fire({KeyCode=Enum.KeyCode.X},false)""")
+    assert g.find_gui('Modal').Visible is False
+    assert g._requests[len(g._requests)].action == 'close'
+    lua.execute("""_push.OnClientEvent:Fire('dialogue',{id='MEDIC',name='Анна Лебедева',role='Медицинское сопровождение',
+        node='repeat',text='Показания до и после серии сравнивают отдельно.',options={{id='health',label='Как прошёл осмотр?'}}})
+        tick_ui(.3);click('ЖУРНАЛ [J]')""")
+    assert g.visible_text('ЛИЧНЫЙ АРХИВ / СОБРАННЫЕ СВИДЕТЕЛЬСТВА')
+    assert g._requests[len(g._requests)].action == 'close'
+
+    # Author metadata is displayed only after receiving the collected document.
+    lua.execute("""_push.OnClientEvent:Fire('document',{id='DOC_NEW',title='Вахтенный журнал',room='C04',
+        author='Дежурная смена',period='После инцидента 03',body='Внешний обход выполнен.',
+        hypotheses={'Источник сигнала не установлен.'}})""")
+    assert g.visible_text('Автор: Дежурная смена')
+    assert g.visible_text('После инцидента 03')
+    assert g.visible_text('ТРЕБУЮТ ПОДТВЕРЖДЕНИЯ')
+
+    # Bounded transitions reuse one tween per object and preserve disabled states.
+    lua.execute("""tick_ui(.3)
+        local button=find_gui('QuickControls'):GetChildren()[2]
+        if button and button.MouseEnter then button.MouseEnter:Fire();button.MouseLeave:Fire() end""")
+    assert g._tweensCreated > 0 and g._tweensCancelled > 0
+    assert sum(1 for _, value in g._playerGui.GetChildren(g._playerGui).items()
+               if value.ClassName == 'ScreenGui') == 1
+
     # Clean shutdown removes local effects and reconnect-free UI state.
     lua.execute('script:Destroy()')
     assert g._light.FindFirstChild(g._light, 'ProjectNullV10_Blur') is None
     assert g._sound.FindFirstChild(g._sound, 'ProjectNullV10_Audio') is None
-    print('PASS: actual V10 client boot, requests, all five protocol evidence views,')
-    print('      preview/hold gates, P02 physical-only choices, mobile scroll, journal and cleanup.')
+    old_map = fixture("_rs:FindFirstChild('ProjectNullV10'):FindFirstChild('WorldConfig'):Destroy()")
+    assert old_map.globals().find_gui('StationLocation').Text == 'E01 / Подготовка'
+    assert len(old_map.globals()._warnings) == 0
+    old_map.execute('script:Destroy()')
+    print('PASS: actual operator client, all five protocol evidence views, physical/mobile gates,')
+    print('      branching dialogue requests and close/retry, health/location, journal, transitions and cleanup.')
 
 
 if __name__ == '__main__':

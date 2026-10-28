@@ -1,4 +1,4 @@
--- PROJECT: NULL V10: authoritative experiments, physical access, journals and saves.
+-- PROJECT: NULL V11: existing authoritative procedures with ship, staff and dialogue.
 -- Legacy architecture/controllers remain responsible for their original equipment.
 local RunService = game:GetService("RunService")
 if not RunService:IsServer() then return end
@@ -20,6 +20,16 @@ if not Request or not Push then
 end
 local Engine = require(script.Parent:WaitForChild("ExperimentCore"))
 local Content = require(script.Parent:WaitForChild("Content"))
+local Dialogue = require(script.Parent:WaitForChild("Dialogue"))
+local NPCDirector = require(script.Parent:WaitForChild("NPCDirector"))
+Dialogue.configure(Content)
+local director = NPCDirector.new(facility)
+local environment
+local environmentOK, environmentProblem = pcall(function()
+    local Environment = require(script.Parent:WaitForChild("OceanEnvironment"))
+    environment = Environment.setup(require(script.Parent:WaitForChild("ShipConfig")))
+end)
+if not environmentOK then warn("PROJECT: NULL: exterior environment setup failed: " .. tostring(environmentProblem)) end
 local state = Engine.new()
 local profiles, contexts, buckets, bound = {}, {}, {}, {}
 local documentById, staff = {}, Content.staff or {}
@@ -59,7 +69,7 @@ local function clipped(value, maximum)
 end
 
 local function emptyProfile()
-    return {version = 10, documents = {}, completed = {}, attempts = {}, records = {}}
+    return {version = 11, documents = {}, completed = {}, attempts = {}, records = {}, metStaff = {}}
 end
 
 local function cleanRecord(record)
@@ -85,6 +95,9 @@ local function sanitizeProfile(raw)
     end
     if type(raw.completed) == "table" then
         for id in pairs(validExperiments) do if raw.completed[id] == true then result.completed[id] = true end end
+    end
+    if type(raw.metStaff) == "table" then
+        for id in pairs(staff) do if raw.metStaff[id] == true then result.metStaff[id] = true end end
     end
     if type(raw.attempts) == "table" then
         for id in pairs(validExperiments) do
@@ -211,12 +224,16 @@ local function publicProfile(profile)
         local document = documentById[id]
         if document then
             table.insert(journal, {id = id, title = document.title, room = document.room, body = document.body})
+            local entry = journal[#journal]
+            entry.author, entry.period = document.author, document.period
+            entry.claims, entry.hypotheses = document.claims, document.hypotheses
         end
     end
     table.sort(journal, function(a, b) return a.id < b.id end)
     return {
         documents = copyMap(profile.documents), journal = journal,
         completed = copyMap(profile.completed), attempts = copyMap(profile.attempts),
+        metStaff = copyMap(profile.metStaff),
         records = mergedRecords(profile.records, {}), saveStatus = profile.saveStatus,
     }
 end
@@ -241,7 +258,7 @@ local function sendSnapshot(player)
     snapshot.evidenceReady = #snapshot.evidenceRequired == 0
     local context = contexts[player]
     if context and context.opened then
-        snapshot.context = {kind = context.action, argument = context.argument, title = context.title}
+        snapshot.context = {kind = context.action, argument = context.argument, title = context.title, node = context.dialogueNode}
     end
     Push:FireClient(player, "snapshot", snapshot)
 end
@@ -262,6 +279,7 @@ local function loadProfile(player, profile)
             local clean = sanitizeProfile(saved)
             for id in pairs(clean.documents) do profile.documents[id] = true end
             for id in pairs(clean.completed) do profile.completed[id] = true end
+            for id in pairs(clean.metStaff) do profile.metStaff[id] = true end
             for id in pairs(validExperiments) do
                 profile.attempts[id] = (clean.attempts[id] or 0) + (profile.pendingAttempts[id] or 0)
             end
@@ -313,6 +331,7 @@ saveProfile = function(player, force)
                 local merged = sanitizeProfile(previous)
                 for id in pairs(payload.documents) do merged.documents[id] = true end
                 for id in pairs(payload.completed) do merged.completed[id] = true end
+                for id in pairs(payload.metStaff) do merged.metStaff[id] = true end
                 for id in pairs(validExperiments) do
                     merged.attempts[id] = math.min(1000000, (merged.attempts[id] or 0) + (attemptDelta[id] or 0))
                 end
@@ -329,6 +348,7 @@ saveProfile = function(player, force)
             end
             for id in pairs(clean.documents) do profile.documents[id] = true end
             for id in pairs(clean.completed) do profile.completed[id] = true end
+            for id in pairs(clean.metStaff) do profile.metStaff[id] = true end
             profile.records = mergedRecords(profile.records, clean.records)
             profile.dirty = profile.revision ~= revision
             profile.saveStatus = profile.dirty and "Есть новые изменения; запись запланирована" or "Прогресс сохранён"
@@ -409,31 +429,60 @@ local function contextAllowed(player, required)
     return context
 end
 
-local function dialogue(player, id)
-    local person = staff[id]
-    if type(person) ~= "table" then return end
-    local snapshot = Engine.snapshot(state, now())
-    local profile = profiles[player]
-    local message
-    if snapshot.phase == "failed" then
-        message = id == "MEDIC" and "Испытание остановлено. Пройдите к медицинскому посту E-06; набор помогает только живому участнику. Затем сбросьте протокол на его терминале." or "Сначала прочтите причину остановки. Проверьте питание, вентиляцию и охлаждение. Повреждённый тракт восстанавливается на ремонтном посту, затем нужен сброс и новая калибровка."
-    elseif snapshot.phase == "running" then
-        message = id == "MEDIC" and "Следите за нагрузкой. Аварийная остановка доступна участнику в любой момент; продолжение через предупреждение повышает риск." or "Серия идёт. Показания и инструкция терминала важнее старой таблички. Не меняйте автоматы и охлаждение во время серии без необходимости."
-    elseif snapshot.phase == "prepared" then
-        message = "Калибровка принята. Дождитесь окончания проверки, затем запустите серию с того же терминала. Перед запуском прочтите локальный протокол."
-    else
-        local completed = 0
-        for _ in pairs(profile and profile.completed or {}) do completed = completed + 1 end
-        if completed >= 5 then
-            message = "Все пять локальных протоколов выполнены. Сравните записи и найденные документы: подтверждённые измерения ещё не объясняют природу NULL. Центральный эксперимент остаётся закрытым."
-        elseif completed > 0 then
-            message = "В вашем журнале уже есть принятые протоколы: " .. tostring(completed) .. " из 5. Сохраните результаты на архивном терминале и переходите к следующему посту."
-        else
-            local lines = person.lines or {}
-            message = lines[1] or "Начните с P-01 в операторской E-04. Документы у оборудования объясняют процедуру; после остановки проверяйте причину в журнале."
-        end
+local function npcTalk(id, player, active)
+    if not director then return end
+    local ok, problem = pcall(function() director:talk(id, player, active) end)
+    if not ok then warn("PROJECT: NULL: NPC conversation state failed: " .. tostring(problem)) end
+end
+
+local function closeConversation(player, clear)
+    local context = contexts[player]
+    if context and context.action == "npc" then
+        npcTalk(context.argument, player, false)
+        context.dialogueNode, context.dialoguePayload = nil, nil
+        context.opened = false
+        if clear then contexts[player] = nil end
     end
-    Push:FireClient(player, "dialogue", {id = id, argument = id, name = person.name or id, role = person.role or "Персонал", text = message})
+end
+
+local function dialogue(player, id)
+    local context, profile = contexts[player], profiles[player]
+    if not context or context.action ~= "npc" or context.argument ~= id or not profile then return false end
+    local snapshot = Engine.snapshot(state, now())
+    local payload, reason = Dialogue.open(id, profile, snapshot, profile.metStaff)
+    if not payload then tell(player, reason or "Разговор сейчас недоступен"); return false end
+    context.dialogueNode, context.dialoguePayload, context.dialogueAt = payload.node, payload, now()
+    context.dialoguePhase = snapshot.phase
+    context.greetingText = payload.text
+    if not profile.metStaff[id] then profile.metStaff[id] = true; dirty(profile) end
+    npcTalk(id, player, true)
+    Push:FireClient(player, "dialogue", payload)
+    return true
+end
+
+local function chooseDialogue(player, choice)
+    if type(choice) ~= "string" or #choice > 40 then return end
+    local context = contextAllowed(player, "npc")
+    if not context or not context.opened or not context.dialogueNode or context.dialogueBusy then return end
+    if now() - (context.dialogueAt or -math.huge) < 0.25 then return end
+    context.dialogueBusy, context.dialogueAt = true, now()
+    local ok, payload, reason = pcall(function()
+        return Dialogue.choose(context.argument, context.dialogueNode, choice,
+            profiles[player], Engine.snapshot(state, now()), profiles[player].metStaff)
+    end)
+    context.dialogueBusy = false
+    if not ok then
+        closeConversation(player, true)
+        tell(player, "Разговор прерван; можно обратиться снова.")
+        warn("PROJECT: NULL: dialogue evaluation failed: " .. tostring(payload))
+        return
+    end
+    if not payload then tell(player, reason or "Эта тема сейчас недоступна"); return end
+    if payload.node == "start" and context.greetingText then payload.text = context.greetingText end
+    context.dialogueNode, context.dialoguePayload = payload.node, payload
+    Push:FireClient(player, "dialogue", payload)
+    if payload.closed then closeConversation(player, true) end
+    sendSnapshot(player)
 end
 
 local function openInteraction(player, part, prompt, action, argument)
@@ -451,6 +500,29 @@ local function openInteraction(player, part, prompt, action, argument)
     end
     local titles = {console = "Терминал " .. argument, cooling = "Охлаждение", repair = "Ремонтный пост", supply = "Чистые расходники", medical = "Медицинский пост", records = "Архив протоколов", document = "Документ", npc = "Персонал"}
     if not titles[action] then return end
+    if action == "document" then
+        local document = documentById[argument]
+        if not document then return end
+        if not Dialogue.canRead(document, profiles[player], Engine.snapshot(state, now())) then
+            tell(player, "Эта запись требует контекста. Сначала сверьте независимую хронологию E-07 и индекс C08 либо завершите P-03.")
+            return
+        end
+    elseif action == "npc" and not staff[argument] then return end
+    local previous = contexts[player]
+    if previous and previous.action == "npc" and previous.argument == argument and action == "npc"
+        and previous.opened and previous.dialoguePayload then
+        -- A second prompt refreshes the active node, rather than restarting it.
+        local refreshed = Dialogue.refresh(argument, previous.dialogueNode,
+            profiles[player], Engine.snapshot(state, now()), profiles[player].metStaff)
+        if refreshed then
+            if refreshed.node == "start" and previous.greetingText then refreshed.text = previous.greetingText end
+            previous.dialoguePayload = refreshed
+            Push:FireClient(player, "dialogue", refreshed)
+            sendSnapshot(player)
+            return
+        end
+    end
+    closeConversation(player, true)
     contexts[player] = {part = part, prompt = prompt, action = action, argument = argument, title = titles[action], opened = true}
     if action == "console" and validExperiments[argument] then
         dispatch(player, "select", argument)
@@ -458,7 +530,9 @@ local function openInteraction(player, part, prompt, action, argument)
         local document = documentById[argument]
         if not document then return end
         if not profiles[player].documents[argument] then profiles[player].documents[argument] = true; dirty(profiles[player]) end
-        Push:FireClient(player, "document", {id = document.id, title = document.title, room = document.room, body = document.body})
+        Push:FireClient(player, "document", {id = document.id, title = document.title, room = document.room,
+            body = document.body, author = document.author, period = document.period,
+            claims = document.claims, hypotheses = document.hypotheses})
     elseif action == "npc" then
         dialogue(player, argument)
     end
@@ -513,7 +587,7 @@ end
 Players.PlayerAdded:Connect(playerAdded)
 for _, player in ipairs(Players:GetPlayers()) do playerAdded(player) end
 
-local allowedActions = {hello = true, close = true, select = true, calibrate = true, start = true, respond = true, abort = true, reset = true, cooling = true, repair = true, medical = true, supply = true, save = true, records = true}
+local allowedActions = {hello = true, close = true, dialogue = true, select = true, calibrate = true, start = true, respond = true, abort = true, reset = true, cooling = true, repair = true, medical = true, supply = true, save = true, records = true}
 Request.OnServerEvent:Connect(function(player, action, argument)
     if closing or not profiles[player] or type(action) ~= "string" or not allowedActions[action] or not takeToken(player, 1) then return end
     if action == "hello" then
@@ -523,6 +597,7 @@ Request.OnServerEvent:Connect(function(player, action, argument)
         sendSnapshot(player)
         return
     elseif action == "close" then
+        closeConversation(player, true)
         if contexts[player] then contexts[player].opened = false end
         return
     elseif action == "records" then
@@ -535,7 +610,10 @@ Request.OnServerEvent:Connect(function(player, action, argument)
         return
     end
     if not alive(player) then return end
-    if action == "abort" then
+    if action == "dialogue" then
+        chooseDialogue(player, argument)
+        return
+    elseif action == "abort" then
         local snapshot = Engine.snapshot(state, now())
         if snapshot.owner ~= player.UserId then return end
         dispatch(player, "abort", nil)
@@ -650,6 +728,34 @@ local function releaseUnusedReservation(snapshot)
     return Engine.snapshot(state, now())
 end
 
+local function maintainConversations(snapshot)
+    for player, context in pairs(contexts) do
+        if context.action == "npc" and context.opened then
+            if not accessible(player, context.part, context.prompt) then
+                local identity = Dialogue.identity(context.argument) or {}
+                closeConversation(player, true)
+                Push:FireClient(player, "dialogue", {id = identity.id, argument = identity.id,
+                    name = identity.name, role = identity.role, node = "closed", text = "",
+                    options = {}, closed = true})
+            else
+                -- Reading may take longer than the Director's finite talk lease.
+                -- Renew only while server-side physical access remains valid.
+                npcTalk(context.argument, player, true)
+                if context.dialoguePhase ~= snapshot.phase then
+                    context.dialoguePhase = snapshot.phase
+                    local payload = Dialogue.refresh(context.argument, context.dialogueNode,
+                        profiles[player], snapshot, profiles[player].metStaff)
+                    if payload and payload.node == "start" and context.greetingText then payload.text = context.greetingText end
+                    if payload and context.dialoguePayload and payload.text ~= context.dialoguePayload.text then
+                        context.dialoguePayload = payload
+                        Push:FireClient(player, "dialogue", payload)
+                    end
+                end
+            end
+        end
+    end
+end
+
 RunService.Heartbeat:Connect(function(dt)
     if closing then return end
     if not finite(dt) or dt < 0 then return end
@@ -658,6 +764,14 @@ RunService.Heartbeat:Connect(function(dt)
     Engine.setInputs(state, inputs())
     local events = Engine.step(state, elapsed, now()) or {}
     for _, event in ipairs(events) do handleEvent(event) end
+    if director then
+        local ok, problem = pcall(function() director:step(elapsed, Engine.snapshot(state, now())) end)
+        if not ok then
+            warn("PROJECT: NULL: NPC director stopped after an error: " .. tostring(problem))
+            pcall(function() director:destroy() end)
+            director = nil
+        end
+    end
     if #events > 0 then broadcast() end
     heartbeatElapsed = heartbeatElapsed + elapsed
     effectsElapsed = effectsElapsed + elapsed
@@ -669,6 +783,7 @@ RunService.Heartbeat:Connect(function(dt)
     if heartbeatElapsed >= 1 then
         heartbeatElapsed = 0
         local snapshot = releaseUnusedReservation(Engine.snapshot(state, now()))
+        maintainConversations(snapshot)
         refreshEffects(snapshot)
         broadcast()
     end
@@ -684,6 +799,7 @@ end)
 refreshEffects(Engine.snapshot(state, now()))
 
 Players.PlayerRemoving:Connect(function(player)
+    closeConversation(player, true)
     local snapshot = Engine.snapshot(state, now())
     if snapshot.owner == player.UserId then
         Engine.setInputs(state, {Computers = false, Ventilation = false, AcousticAmplifiers = false, PhysicalHall = false, ownerPresent = false})
@@ -700,6 +816,12 @@ end)
 
 game:BindToClose(function()
     closing = true
+    for player in pairs(contexts) do closeConversation(player, true) end
+    if director then director:destroy(); director = nil end
+    if environment and environment.destroy then
+        pcall(function() environment:destroy() end)
+        environment = nil
+    end
     for _, player in ipairs(Players:GetPlayers()) do saveProfile(player, true) end
     local deadline = os.clock() + 8
     while os.clock() < deadline do

@@ -1,0 +1,3230 @@
+{
+  "result": "PASS",
+  "validation": "Static XML, joint-rest transforms and conservative oriented geometry; no Roblox Studio execution",
+  "source_sha256": "6c7cd75d14888d070421008fd3e4488be3657160e49d4c08064af35cacb0e195",
+  "target_sha256": "1ce3d610f385723a759c65496f32b32073daac8770b50f2362935f59b79fa135",
+  "baseline_v10_instances": 10929,
+  "new_instances": 3911,
+  "new_parts": 2930,
+  "new_primary_colliders": 1751,
+  "changes": {
+    "modified": [
+      {
+        "ref": "RBX00000000000000000000000000000008",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/B2_Architecture/OuterWall"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000152",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/HumanoidRootPart"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000153",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Torso"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000154",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Head"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000155",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Left Arm"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000156",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Right Arm"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000157",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Left Leg"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000158",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Right Leg"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000015C",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Boot"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000015D",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Boot"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000015E",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Eye"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000015F",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Eye"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000160",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Mouth"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000161",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/UniformCollar"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000162",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/StaffBadge"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000165",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/UtilityBelt"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000166",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Radio"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000167",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/RadioAntenna"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000168",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Humanoid"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ACA",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/HumanoidRootPart"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ACB",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Torso"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ACC",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Head"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ACD",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Left Arm"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ACE",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Right Arm"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ACF",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Left Leg"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD0",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Right Leg"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD1",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Boot"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD2",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Boot"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD3",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Eye"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD4",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Eye"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD5",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Mouth"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD6",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/UniformCollar"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AD7",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/StaffBadge"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ADA",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/UtilityBelt"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ADB",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Radio"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ADC",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/RadioAntenna"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ADD",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Humanoid"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000E65",
+        "path": "StarterPlayer/StarterPlayerScripts/ProjectNullClient_V10"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000E5E",
+        "path": "ServerScriptService/ProjectNullV10/Content"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000E5F",
+        "path": "ServerScriptService/ProjectNullV10/ProjectNullServer_V10"
+      }
+    ],
+    "removed": [
+      {
+        "ref": "RBX00000000000000000000000070000169",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Torso/UniformJoint_HumanoidRootPart"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000016A",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Torso/UniformJoint_Head"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000016B",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Torso/UniformJoint_Left_Arm"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000016C",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Torso/UniformJoint_Right_Arm"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000016D",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Torso/UniformJoint_Left_Leg"
+      },
+      {
+        "ref": "RBX0000000000000000000000007000016E",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Torso/UniformJoint_Right_Leg"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ADE",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Torso/UniformJoint_HumanoidRootPart"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000ADF",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Torso/UniformJoint_Head"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AE0",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Torso/UniformJoint_Left_Arm"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AE1",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Torso/UniformJoint_Right_Arm"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AE2",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Torso/UniformJoint_Left_Leg"
+      },
+      {
+        "ref": "RBX00000000000000000000000070000AE3",
+        "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Torso/UniformJoint_Right_Leg"
+      }
+    ],
+    "reparented": []
+  },
+  "registered_cavities": 43,
+  "cavities": [
+    {
+      "model": "RBX000000000000000000000000700011DD",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Forebridge_Navigation/MarineConsole_1",
+      "internal_scope": "RBX000000000000000000000000700011DD",
+      "internal_parts_inside": 8,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700011F9",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Forebridge_Navigation/MarineConsole_2",
+      "internal_scope": "RBX000000000000000000000000700011F9",
+      "internal_parts_inside": 8,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001215",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Forebridge_Navigation/MarineConsole_3",
+      "internal_scope": "RBX00000000000000000000000070001215",
+      "internal_parts_inside": 8,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001231",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Forebridge_Navigation/MarineConsole_4",
+      "internal_scope": "RBX00000000000000000000000070001231",
+      "internal_parts_inside": 8,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000125F",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Marine_Topside_Systems/WeatherIntakeAndFilter",
+      "internal_scope": "RBX0000000000000000000000007000125F",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001281",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Marine_Topside_Systems/WeatherIntakeAndFilter",
+      "internal_scope": "RBX00000000000000000000000070001281",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700012A3",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Marine_Topside_Systems/WeatherIntakeAndFilter",
+      "internal_scope": "RBX000000000000000000000000700012A3",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700012DF",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Marine_Topside_Systems/MarineEmergencyBattery",
+      "internal_scope": "RBX000000000000000000000000700012DF",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000135B",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Ocean_Vessel_V11/Marine_Service_And_Rescue_Deck/RescueEquipmentLocker",
+      "internal_scope": "RBX0000000000000000000000007000135B",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001720",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C01_Каюты_сменного_персонала/CrewPersonalLocker",
+      "internal_scope": "RBX00000000000000000000000070001720",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001735",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C01_Каюты_сменного_персонала/CrewPersonalLocker",
+      "internal_scope": "RBX00000000000000000000000070001735",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000174A",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C01_Каюты_сменного_персонала/CrewPersonalLocker",
+      "internal_scope": "RBX0000000000000000000000007000174A",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000175F",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C01_Каюты_сменного_персонала/CrewPersonalLocker",
+      "internal_scope": "RBX0000000000000000000000007000175F",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700017A2",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C02_Камбуз_и_кают-компания/GalleySupplyCase",
+      "internal_scope": "RBX000000000000000000000000700017A2",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700017BA",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C02_Камбуз_и_кают-компания/GalleySupplyCase",
+      "internal_scope": "RBX000000000000000000000000700017BA",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700017D2",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C02_Камбуз_и_кают-компания/GalleySupplyCase",
+      "internal_scope": "RBX000000000000000000000000700017D2",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700017EA",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C02_Камбуз_и_кают-компания/GalleySupplyCase",
+      "internal_scope": "RBX000000000000000000000000700017EA",
+      "internal_parts_inside": 6,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001820",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C03_Санитарный_блок/HygieneSupplyLocker",
+      "internal_scope": "RBX00000000000000000000000070001820",
+      "internal_parts_inside": 4,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000183E",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C04_Пост_безопасности/WatchDisplay",
+      "internal_scope": "RBX0000000000000000000000007000183E",
+      "internal_parts_inside": 9,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001864",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C04_Пост_безопасности/WatchDisplay",
+      "internal_scope": "RBX00000000000000000000000070001864",
+      "internal_parts_inside": 9,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000188A",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C04_Пост_безопасности/WatchDisplay",
+      "internal_scope": "RBX0000000000000000000000007000188A",
+      "internal_parts_inside": 9,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700018AE",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C04_Пост_безопасности/AccessRegisterCabinet",
+      "internal_scope": "RBX000000000000000000000000700018AE",
+      "internal_parts_inside": 12,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700018F0",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C04_Пост_безопасности/EmergencyEquipmentCabinet",
+      "internal_scope": "RBX000000000000000000000000700018F0",
+      "internal_parts_inside": 3,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001910",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C05_Радиорубка_и_связь/CommsDisplay",
+      "internal_scope": "RBX00000000000000000000000070001910",
+      "internal_parts_inside": 9,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001936",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C05_Радиорубка_и_связь/CommsDisplay",
+      "internal_scope": "RBX00000000000000000000000070001936",
+      "internal_parts_inside": 9,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX0000000000000000000000007000195C",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C05_Радиорубка_и_связь/CommsDisplay",
+      "internal_scope": "RBX0000000000000000000000007000195C",
+      "internal_parts_inside": 9,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001980",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C05_Радиорубка_и_связь/RadioReceiverRack",
+      "internal_scope": "RBX00000000000000000000000070001980",
+      "internal_parts_inside": 30,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700019B1",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C05_Радиорубка_и_связь/RadioReceiverRack",
+      "internal_scope": "RBX000000000000000000000000700019B1",
+      "internal_parts_inside": 30,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX000000000000000000000000700019E3",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C06_Судовой_распределительный_пост/MarineDistributionCabinet",
+      "internal_scope": "RBX000000000000000000000000700019E3",
+      "internal_parts_inside": 21,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001A0B",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C06_Судовой_распределительный_пост/MarineDistributionCabinet",
+      "internal_scope": "RBX00000000000000000000000070001A0B",
+      "internal_parts_inside": 21,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001A33",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C06_Судовой_распределительный_пост/MarineDistributionCabinet",
+      "internal_scope": "RBX00000000000000000000000070001A33",
+      "internal_parts_inside": 21,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001A5B",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C06_Судовой_распределительный_пост/MarineDistributionCabinet",
+      "internal_scope": "RBX00000000000000000000000070001A5B",
+      "internal_parts_inside": 21,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001A8C",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C07_Водоподготовка_и_жизнеобеспечение/WaterTreatmentSkidCase",
+      "internal_scope": "RBX00000000000000000000000070001A8C",
+      "internal_parts_inside": 18,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001AB0",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C07_Водоподготовка_и_жизнеобеспечение/WaterTreatmentSkidCase",
+      "internal_scope": "RBX00000000000000000000000070001AB0",
+      "internal_parts_inside": 18,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001AF5",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C08_Дежурная_администрация/ArchiveIndexDisplay",
+      "internal_scope": "RBX00000000000000000000000070001AF5",
+      "internal_parts_inside": 9,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001B19",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C08_Дежурная_администрация/DutyRecordCabinet",
+      "internal_scope": "RBX00000000000000000000000070001B19",
+      "internal_parts_inside": 12,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001B5B",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C08_Дежурная_администрация/DutyRecordCabinet",
+      "internal_scope": "RBX00000000000000000000000070001B5B",
+      "internal_parts_inside": 12,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001BA6",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C09_Балластная_насосная/BallastPumpModule/BallastMotorCase",
+      "internal_scope": "RBX00000000000000000000000070001BA6",
+      "internal_parts_inside": 13,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001BC2",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C09_Балластная_насосная/BallastPumpModule/BallastPressureCase",
+      "internal_scope": "RBX00000000000000000000000070001BC2",
+      "internal_parts_inside": 4,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001BDB",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C09_Балластная_насосная/BallastPumpModule/BallastMotorCase",
+      "internal_scope": "RBX00000000000000000000000070001BDB",
+      "internal_parts_inside": 13,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001BF7",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C09_Балластная_насосная/BallastPumpModule/BallastPressureCase",
+      "internal_scope": "RBX00000000000000000000000070001BF7",
+      "internal_parts_inside": 4,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001C17",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C10_Пост_внешнего_наблюдения/MarineObservationPedestal/OpticalRecordingInstrument",
+      "internal_scope": "RBX00000000000000000000000070001C17",
+      "internal_parts_inside": 11,
+      "filled_collision_proxies": []
+    },
+    {
+      "model": "RBX00000000000000000000000070001C34",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C10_Пост_внешнего_наблюдения/MarineObservationPedestal/OpticalRecordingInstrument",
+      "internal_scope": "RBX00000000000000000000000070001C34",
+      "internal_parts_inside": 11,
+      "filled_collision_proxies": []
+    }
+  ],
+  "standing_routes": [
+    {
+      "name": "E03_south_approach",
+      "bounds": [
+        [
+          -1.25,
+          1.25
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -22,
+          -7
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "E06_central_route",
+      "bounds": [
+        [
+          58.6,
+          61.4
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -68.3,
+          -47.7
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "E07_working_aisle",
+      "bounds": [
+        [
+          -39.65,
+          -36.25
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -54.8,
+          -44.5
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "E10_central_route",
+      "bounds": [
+        [
+          152.6,
+          155.4
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          -33.8,
+          33.8
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "E16_entry_approach",
+      "bounds": [
+        [
+          -1.35,
+          1.35
+        ],
+        [
+          -63.0,
+          -58.5
+        ],
+        [
+          52.5,
+          61.0
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "E01_central_preparation_route",
+      "bounds": [
+        [
+          -1.35,
+          1.35
+        ],
+        [
+          -63,
+          -58.5
+        ],
+        [
+          -74.0,
+          -50.0
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "E04_southern_operator_route",
+      "bounds": [
+        [
+          -58.8,
+          -27.0
+        ],
+        [
+          -63,
+          -58.5
+        ],
+        [
+          -6.3,
+          -3.5
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "E12_control_entry_route",
+      "bounds": [
+        [
+          201.35,
+          204.05
+        ],
+        [
+          -63,
+          -58.5
+        ],
+        [
+          -10.2,
+          8.5
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "V11_west_gallery_portal",
+      "bounds": [
+        [
+          -98,
+          -88
+        ],
+        [
+          -63.85,
+          -58.6
+        ],
+        [
+          -3,
+          3
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "name": "V11_upper_central_corridor",
+      "bounds": [
+        [
+          -94,
+          214
+        ],
+        [
+          -27.85,
+          -22.6
+        ],
+        [
+          -4,
+          4
+        ]
+      ],
+      "blockers": []
+    }
+  ],
+  "old_click_targets": 195,
+  "click_target_obstructions": [],
+  "new_vs_existing_structural_contacts": [
+    {
+      "new": "RBX000000000000000000000000700013CE",
+      "new_path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/LAB_Crew_Stair_Tower/WestGalleryPortalNorthPier",
+      "existing": "RBX0000000000000000000000000000000B",
+      "existing_path": "Workspace/PROJECT_NULL_ARCH_P01/B2_Architecture/OuterWall",
+      "overlap": 0.5,
+      "reason": "The restored west wall strip retains its original wall plane and laps the unchanged north perimeter corner/ceiling edge by half a stud; the portal remains clear."
+    },
+    {
+      "new": "RBX000000000000000000000000700013CE",
+      "new_path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/LAB_Crew_Stair_Tower/WestGalleryPortalNorthPier",
+      "existing": "RBX0000000000000000000000000000000F",
+      "existing_path": "Workspace/PROJECT_NULL_ARCH_P01/B2_Architecture/ServiceGalleryCeiling",
+      "overlap": 0.5,
+      "reason": "The restored west wall strip retains its original wall plane and laps the unchanged north perimeter corner/ceiling edge by half a stud; the portal remains clear."
+    },
+    {
+      "new": "RBX000000000000000000000000700013D0",
+      "new_path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/LAB_Crew_Stair_Tower/LowerStairHallFloor",
+      "existing": "RBX00000000000000000000000000001FF5",
+      "existing_path": "Workspace/PROJECT_NULL_ARCH_P01/B2_Architecture/SectionedFloorSlab",
+      "overlap": 0.5,
+      "reason": "Half-stud threshold floor lap joins the new stair hall to the unchanged laboratory slab at equal floor height."
+    }
+  ],
+  "stair_flights": [
+    {
+      "id": "Flight_01",
+      "treads": 20,
+      "rise": [
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014
+      ],
+      "pitch": [
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0500000000000114,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0500000000000114,
+        1.0499999999999972
+      ],
+      "headroom_obstructions": []
+    },
+    {
+      "id": "Flight_02",
+      "treads": 20,
+      "rise": [
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014
+      ],
+      "pitch": [
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0500000000000114,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0500000000000114,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.049999999999983
+      ],
+      "headroom_obstructions": []
+    },
+    {
+      "id": "Flight_03",
+      "treads": 20,
+      "rise": [
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999943,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.6000000000000014,
+        0.5999999999999979,
+        0.6000000000000014,
+        0.5999999999999979,
+        0.6000000000000014,
+        0.6000000000000014
+      ],
+      "pitch": [
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.0500000000000114,
+        1.049999999999983,
+        1.0500000000000114,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0500000000000114,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0499999999999972,
+        1.0500000000000114,
+        1.0499999999999972
+      ],
+      "headroom_obstructions": []
+    }
+  ],
+  "native_water_sections": [
+    {
+      "index": 0,
+      "center": [
+        -440.0,
+        -141.0,
+        0.0
+      ],
+      "size": [
+        520,
+        206,
+        1300
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 1,
+      "center": [
+        600.0,
+        -141.0,
+        0.0
+      ],
+      "size": [
+        500,
+        206,
+        1300
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 2,
+      "center": [
+        -178.0,
+        -141.0,
+        0.0
+      ],
+      "size": [
+        4,
+        206,
+        1300
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 3,
+      "center": [
+        -172.0,
+        -141.0,
+        -377.0
+      ],
+      "size": [
+        8,
+        206,
+        546
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 4,
+      "center": [
+        -172.0,
+        -141.0,
+        377.0
+      ],
+      "size": [
+        8,
+        206,
+        546
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 5,
+      "center": [
+        -164.0,
+        -141.0,
+        -383.0
+      ],
+      "size": [
+        8,
+        206,
+        534
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 6,
+      "center": [
+        -164.0,
+        -141.0,
+        383.0
+      ],
+      "size": [
+        8,
+        206,
+        534
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 7,
+      "center": [
+        -156.0,
+        -141.0,
+        -387.8
+      ],
+      "size": [
+        8.0,
+        206.0,
+        524.4
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 8,
+      "center": [
+        -156.0,
+        -141.0,
+        387.8
+      ],
+      "size": [
+        8.0,
+        206.0,
+        524.4
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 9,
+      "center": [
+        -148.0,
+        -141.0,
+        -392.6
+      ],
+      "size": [
+        8.0,
+        206.0,
+        514.8
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 10,
+      "center": [
+        -148.0,
+        -141.0,
+        392.6
+      ],
+      "size": [
+        8.0,
+        206.0,
+        514.8
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 11,
+      "center": [
+        -142.0,
+        -141.0,
+        -395.0
+      ],
+      "size": [
+        4,
+        206,
+        510
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 12,
+      "center": [
+        -142.0,
+        -141.0,
+        395.0
+      ],
+      "size": [
+        4,
+        206,
+        510
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 13,
+      "center": [
+        60.0,
+        -141.0,
+        -395.0
+      ],
+      "size": [
+        400,
+        206,
+        510
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 14,
+      "center": [
+        60.0,
+        -141.0,
+        395.0
+      ],
+      "size": [
+        400,
+        206,
+        510
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 15,
+      "center": [
+        264.0,
+        -141.0,
+        -395.0
+      ],
+      "size": [
+        8.0,
+        206.0,
+        510.0
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 16,
+      "center": [
+        264.0,
+        -141.0,
+        395.0
+      ],
+      "size": [
+        8.0,
+        206.0,
+        510.0
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 17,
+      "center": [
+        272.0,
+        -141.0,
+        -388.4
+      ],
+      "size": [
+        8.0,
+        206.0,
+        523.2
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 18,
+      "center": [
+        272.0,
+        -141.0,
+        388.4
+      ],
+      "size": [
+        8.0,
+        206.0,
+        523.2
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 19,
+      "center": [
+        280.0,
+        -141.0,
+        -381.8
+      ],
+      "size": [
+        8.0,
+        206.0,
+        536.4
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 20,
+      "center": [
+        280.0,
+        -141.0,
+        381.8
+      ],
+      "size": [
+        8.0,
+        206.0,
+        536.4
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 21,
+      "center": [
+        288.0,
+        -141.0,
+        -375.2
+      ],
+      "size": [
+        8.0,
+        206.0,
+        549.6
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 22,
+      "center": [
+        288.0,
+        -141.0,
+        375.2
+      ],
+      "size": [
+        8.0,
+        206.0,
+        549.6
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 23,
+      "center": [
+        296.0,
+        -141.0,
+        -368.6
+      ],
+      "size": [
+        8.0,
+        206.0,
+        562.8
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 24,
+      "center": [
+        296.0,
+        -141.0,
+        368.6
+      ],
+      "size": [
+        8.0,
+        206.0,
+        562.8
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 25,
+      "center": [
+        304.0,
+        -141.0,
+        -362.0
+      ],
+      "size": [
+        8.0,
+        206.0,
+        576.0
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 26,
+      "center": [
+        304.0,
+        -141.0,
+        362.0
+      ],
+      "size": [
+        8.0,
+        206.0,
+        576.0
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 27,
+      "center": [
+        312.0,
+        -141.0,
+        -355.4
+      ],
+      "size": [
+        8.0,
+        206.0,
+        589.2
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 28,
+      "center": [
+        312.0,
+        -141.0,
+        355.4
+      ],
+      "size": [
+        8.0,
+        206.0,
+        589.2
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 29,
+      "center": [
+        320.0,
+        -141.0,
+        -348.8
+      ],
+      "size": [
+        8.0,
+        206.0,
+        602.4
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 30,
+      "center": [
+        320.0,
+        -141.0,
+        348.8
+      ],
+      "size": [
+        8.0,
+        206.0,
+        602.4
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 31,
+      "center": [
+        328.0,
+        -141.0,
+        -342.2
+      ],
+      "size": [
+        8.0,
+        206.0,
+        615.6
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 32,
+      "center": [
+        328.0,
+        -141.0,
+        342.2
+      ],
+      "size": [
+        8.0,
+        206.0,
+        615.6
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 33,
+      "center": [
+        336.0,
+        -141.0,
+        -335.6
+      ],
+      "size": [
+        8.0,
+        206.0,
+        628.8
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 34,
+      "center": [
+        336.0,
+        -141.0,
+        335.6
+      ],
+      "size": [
+        8.0,
+        206.0,
+        628.8
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 35,
+      "center": [
+        345.0,
+        -141.0,
+        -329.0
+      ],
+      "size": [
+        10,
+        206,
+        642
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 36,
+      "center": [
+        345.0,
+        -141.0,
+        329.0
+      ],
+      "size": [
+        10,
+        206,
+        642
+      ],
+      "crosses_laboratories": false
+    },
+    {
+      "index": 37,
+      "center": [
+        85.0,
+        -168.0,
+        0.0
+      ],
+      "size": [
+        530,
+        152,
+        290
+      ],
+      "crosses_laboratories": false
+    }
+  ],
+  "declared_connected_routes": [
+    {
+      "id": "LAB_TO_CREW_STAIR",
+      "points": [
+        [
+          -86,
+          -64,
+          0
+        ],
+        [
+          -97,
+          -64,
+          0
+        ],
+        [
+          -139,
+          -64,
+          0
+        ],
+        [
+          -139,
+          -64,
+          -16
+        ],
+        [
+          -138.6,
+          -64,
+          -16
+        ],
+        [
+          -116.65,
+          -52,
+          -16
+        ],
+        [
+          -110,
+          -52,
+          -16
+        ],
+        [
+          -110,
+          -52,
+          0
+        ],
+        [
+          -113.4,
+          -52,
+          0
+        ],
+        [
+          -135.35,
+          -40,
+          0
+        ],
+        [
+          -139,
+          -40,
+          0
+        ],
+        [
+          -139,
+          -40,
+          16
+        ],
+        [
+          -138.6,
+          -40,
+          16
+        ],
+        [
+          -116.65,
+          -28,
+          16
+        ],
+        [
+          -98,
+          -28,
+          16
+        ],
+        [
+          -94,
+          -28,
+          0
+        ],
+        [
+          -86,
+          -28,
+          0
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "CREW_MAIN_CORRIDOR",
+      "points": [
+        [
+          -89,
+          -28,
+          0
+        ],
+        [
+          210,
+          -28,
+          0
+        ],
+        [
+          217,
+          -28,
+          0
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C01_ENTRY",
+      "points": [
+        [
+          -55.0,
+          -28.0,
+          0
+        ],
+        [
+          -55.0,
+          -28.0,
+          -9
+        ],
+        [
+          -55.0,
+          -28.0,
+          -15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C02_ENTRY",
+      "points": [
+        [
+          5.0,
+          -28.0,
+          0
+        ],
+        [
+          5.0,
+          -28.0,
+          -9
+        ],
+        [
+          5.0,
+          -28.0,
+          -15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C03_ENTRY",
+      "points": [
+        [
+          59.0,
+          -28.0,
+          0
+        ],
+        [
+          59.0,
+          -28.0,
+          -9
+        ],
+        [
+          59.0,
+          -28.0,
+          -15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C04_ENTRY",
+      "points": [
+        [
+          115.0,
+          -28.0,
+          0
+        ],
+        [
+          115.0,
+          -28.0,
+          -9
+        ],
+        [
+          115.0,
+          -28.0,
+          -15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C05_ENTRY",
+      "points": [
+        [
+          177.5,
+          -28.0,
+          0
+        ],
+        [
+          177.5,
+          -28.0,
+          -9
+        ],
+        [
+          177.5,
+          -28.0,
+          -15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C06_ENTRY",
+      "points": [
+        [
+          -55.0,
+          -28.0,
+          0
+        ],
+        [
+          -55.0,
+          -28.0,
+          9
+        ],
+        [
+          -55.0,
+          -28.0,
+          15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C07_ENTRY",
+      "points": [
+        [
+          5.0,
+          -28.0,
+          0
+        ],
+        [
+          5.0,
+          -28.0,
+          9
+        ],
+        [
+          5.0,
+          -28.0,
+          15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C08_ENTRY",
+      "points": [
+        [
+          65.0,
+          -28.0,
+          0
+        ],
+        [
+          65.0,
+          -28.0,
+          9
+        ],
+        [
+          65.0,
+          -28.0,
+          15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C09_ENTRY",
+      "points": [
+        [
+          135.0,
+          -28.0,
+          0
+        ],
+        [
+          135.0,
+          -28.0,
+          9
+        ],
+        [
+          135.0,
+          -28.0,
+          15
+        ]
+      ],
+      "blockers": []
+    },
+    {
+      "id": "C10_ENTRY",
+      "points": [
+        [
+          187.5,
+          -28.0,
+          0
+        ],
+        [
+          187.5,
+          -28.0,
+          9
+        ],
+        [
+          187.5,
+          -28.0,
+          15
+        ]
+      ],
+      "blockers": []
+    }
+  ],
+  "interaction_approaches": [
+    {
+      "ref": "RBX00000000000000000000000070000113",
+      "action": "records",
+      "argument": "records",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/ShiftRecords/V10_ConsoleScreen",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        8.753801214870954,
+        -59.35,
+        -66.20625290164516
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000154",
+      "action": "npc",
+      "argument": "TECH",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/Staff_TECH/Head",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        14.3,
+        -59.35,
+        -71.3
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 1
+    },
+    {
+      "ref": "RBX00000000000000000000000070000177",
+      "action": "document",
+      "argument": "DOC_SHIFT_HANDOVER",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/ShiftHandover/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        7.113137308968396,
+        -59.35,
+        -49.906513610622255
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 19
+    },
+    {
+      "ref": "RBX00000000000000000000000070000184",
+      "action": "document",
+      "argument": "DOC_ACCESS",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E01_ShiftArchive/AccessPolicy/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -6.953801214870954,
+        -59.35,
+        -74.61874709835485
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 2
+    },
+    {
+      "ref": "RBX00000000000000000000000070000267",
+      "action": "console",
+      "argument": "P01",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/P01_OperatorTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -62.45559665245489,
+        -59.35,
+        -8.988114914447127
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 22
+    },
+    {
+      "ref": "RBX000000000000000000000000700002ED",
+      "action": "document",
+      "argument": "DOC_P01_PROTOCOL",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/P01_Protocol/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -50.746198785129046,
+        -59.35,
+        10.31874709835484
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 18
+    },
+    {
+      "ref": "RBX000000000000000000000000700002FA",
+      "action": "document",
+      "argument": "DOC_P03_LOG",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/OfficialIncidentSummary/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -60.746198785129046,
+        -59.35,
+        10.31874709835484
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000308",
+      "action": "document",
+      "argument": "DOC_OPERATOR",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E04_OperatorEvidence/OperatorPersonalFile/DossierReadFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -36.746198785129046,
+        -59.35,
+        10.298747098354841
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000A84",
+      "action": "console",
+      "argument": "P05",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/P05_BoundaryTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        18.353801214870956,
+        -59.35,
+        -10.20625290164516
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000A98",
+      "action": "document",
+      "argument": "DOC_P05_PROTOCOL",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/P05_Protocol/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -10.013137308968396,
+        -59.35,
+        -21.94348638937775
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 3
+    },
+    {
+      "ref": "RBX00000000000000000000000070000ABE",
+      "action": "document",
+      "argument": "DOC_NULL_LIMIT",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E03_BoundaryVerification/RedactedBoundaryMemo/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        15.253801214870954,
+        -59.35,
+        22.46874709835484
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000ACC",
+      "action": "npc",
+      "argument": "MEDIC",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/Staff_MEDIC/Head",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        78.37989898732233,
+        -59.35,
+        -5.420101012677668
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 5
+    },
+    {
+      "ref": "RBX00000000000000000000000070000B15",
+      "action": "document",
+      "argument": "DOC_RECOVERY",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/RecoveryTransfer/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        78.5868626910316,
+        -59.35,
+        -21.94348638937775
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 3
+    },
+    {
+      "ref": "RBX00000000000000000000000070000B22",
+      "action": "document",
+      "argument": "DOC_MISSING_SHIFT",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E05_RecoveryAndHandover/VacantPost/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        43.05380121487095,
+        -59.35,
+        6.368747098354841
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000B44",
+      "action": "medical",
+      "argument": "kit",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E06_MedicalRecords/FirstAidDispenser",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        69.17188508555287,
+        -59.35,
+        -68.16559665245488
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 20
+    },
+    {
+      "ref": "RBX00000000000000000000000070000B50",
+      "action": "document",
+      "argument": "DOC_MEDICAL",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E06_MedicalRecords/MedicalObservation/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        53.44619878512905,
+        -59.35,
+        -68.56874709835483
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 2
+    },
+    {
+      "ref": "RBX00000000000000000000000070000B76",
+      "action": "console",
+      "argument": "P03",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E07_TimelineAndReconstruction/P03_ReconstructionTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -56.671513610622256,
+        -59.35,
+        -48.2468626910316
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 23
+    },
+    {
+      "ref": "RBX00000000000000000000000070000B8A",
+      "action": "document",
+      "argument": "DOC_P03_CORRECTION",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E07_TimelineAndReconstruction/IndependentSignedLog/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -49.1131373089684,
+        -59.35,
+        -58.04348638937775
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 3
+    },
+    {
+      "ref": "RBX00000000000000000000000070000B97",
+      "action": "document",
+      "argument": "DOC_CALIBRATION",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E07_TimelineAndReconstruction/CalibrationOrder/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -32.55380121487095,
+        -59.35,
+        -58.56874709835484
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 2
+    },
+    {
+      "ref": "RBX00000000000000000000000070000BDF",
+      "action": "supply",
+      "argument": "filter",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/FilterIssuePlate",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        57.2,
+        -59.35,
+        74.37
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 17
+    },
+    {
+      "ref": "RBX00000000000000000000000070000BF9",
+      "action": "repair",
+      "argument": "repair",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/MaintenanceWorkOrder",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        67.92314112161293,
+        -59.35,
+        76.3803612880645
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 34
+    },
+    {
+      "ref": "RBX00000000000000000000000070000C04",
+      "action": "document",
+      "argument": "DOC_SUPPLY",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E08_WorkshopAndFilters/FilterIssueLog/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        56.60568095778223,
+        -59.35,
+        77.0320032289113
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 82
+    },
+    {
+      "ref": "RBX00000000000000000000000070000C32",
+      "action": "document",
+      "argument": "DOC_QUARANTINE",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E09_QuarantinedHardware/QuarantineInventory/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -38.34619878512905,
+        -59.35,
+        68.56874709835483
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000C5C",
+      "action": "console",
+      "argument": "P02",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PerceptionTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        212.75380121487095,
+        -59.35,
+        -7.006252901645159
+      ],
+      "support": "RBX00000000000000000000000000001681",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000C70",
+      "action": "document",
+      "argument": "DOC_P02_PROTOCOL",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_Rule/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        210.74619878512905,
+        -59.35,
+        -10.51874709835484
+      ],
+      "support": "RBX00000000000000000000000000001681",
+      "trials": 2
+    },
+    {
+      "ref": "RBX00000000000000000000000070000C7D",
+      "action": "document",
+      "argument": "DOC_HALL_CONTROL",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/ObserverStaffMemo/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        189.25380121487095,
+        -59.35,
+        10.51874709835484
+      ],
+      "support": "RBX00000000000000000000000000001681",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000C94",
+      "action": "response",
+      "argument": "left",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PhysicalResponsePosts/P02_Response_left/PhysicalResponseButton",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        148.65,
+        -59.35,
+        -16.2
+      ],
+      "support": "RBX00000000000000000000000000001681",
+      "trials": 9
+    },
+    {
+      "ref": "RBX00000000000000000000000070000CA3",
+      "action": "response",
+      "argument": "center",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PhysicalResponsePosts/P02_Response_center/PhysicalResponseButton",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        169.35,
+        -59.35,
+        -0.20000000000000018
+      ],
+      "support": "RBX00000000000000000000000000001681",
+      "trials": 9
+    },
+    {
+      "ref": "RBX00000000000000000000000070000CB2",
+      "action": "response",
+      "argument": "right",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E12_PerceptionControl/P02_PhysicalResponsePosts/P02_Response_right/PhysicalResponseButton",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        148.65,
+        -59.35,
+        18.8
+      ],
+      "support": "RBX00000000000000000000000000001681",
+      "trials": 9
+    },
+    {
+      "ref": "RBX00000000000000000000000070000D47",
+      "action": "document",
+      "argument": "DOC_GENERATIONS",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E13_WithdrawnGeneration/RetiredGeneration/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        140.25380121487095,
+        -59.35,
+        86.51874709835484
+      ],
+      "support": "RBX00000000000000000000000000001681",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000D91",
+      "action": "console",
+      "argument": "P04",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/P04_ObserverTerminal/V10_ConsoleScreen",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -14.671513610622252,
+        -59.35,
+        52.85313730896839
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 23
+    },
+    {
+      "ref": "RBX00000000000000000000000070000DA5",
+      "action": "document",
+      "argument": "DOC_P04_PROTOCOL",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/P04_ObservationRules/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -4.753801214870955,
+        -59.35,
+        52.43125290164516
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 2
+    },
+    {
+      "ref": "RBX00000000000000000000000070000DC7",
+      "action": "cooling",
+      "argument": "toggle",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/CoolingControl/V10_ConsoleScreen",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        23.253801214870954,
+        -59.35,
+        57.39374709835484
+      ],
+      "support": "RBX00000000000000000000000000001FF6",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070000DDB",
+      "action": "document",
+      "argument": "DOC_COOLING",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Equipment/Narrative_Gameplay_V10/E16_ObserverAndCooling/CoolingMaintenance/DocumentFace",
+      "reachable": true,
+      "floor": -64,
+      "head": [
+        -8.746198785129046,
+        -59.35,
+        73.46874709835484
+      ],
+      "support": "RBX00000000000000000000000000001FF5",
+      "trials": 18
+    },
+    {
+      "ref": "RBX00000000000000000000000070001561",
+      "action": "document",
+      "argument": "DOC_CREW_SHIFT",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C01_Каюты_сменного_персонала/Document_DOC_CREW_SHIFT",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        -72.4131373089684,
+        -23.35,
+        -58.553486389377746
+      ],
+      "support": "RBX00000000000000000000000070001014",
+      "trials": 3
+    },
+    {
+      "ref": "RBX0000000000000000000000007000158E",
+      "action": "document",
+      "argument": "DOC_MESS_NOTICE",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C02_Камбуз_и_кают-компания/Document_DOC_MESS_NOTICE",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        -12.413137308968398,
+        -23.35,
+        -58.553486389377746
+      ],
+      "support": "RBX00000000000000000000000070001017",
+      "trials": 3
+    },
+    {
+      "ref": "RBX000000000000000000000000700015BA",
+      "action": "document",
+      "argument": "DOC_HYGIENE",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C03_Санитарный_блок/Document_DOC_HYGIENE",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        47.586862691031605,
+        -23.35,
+        -58.553486389377746
+      ],
+      "support": "RBX0000000000000000000000007000101A",
+      "trials": 3
+    },
+    {
+      "ref": "RBX000000000000000000000000700015E7",
+      "action": "document",
+      "argument": "DOC_SECURITY_WATCH",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C04_Пост_безопасности/Document_DOC_SECURITY_WATCH",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        97.5868626910316,
+        -23.35,
+        -58.553486389377746
+      ],
+      "support": "RBX0000000000000000000000007000101C",
+      "trials": 3
+    },
+    {
+      "ref": "RBX00000000000000000000000070001615",
+      "action": "document",
+      "argument": "DOC_COMMS_LOG",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C05_Радиорубка_и_связь/Document_DOC_COMMS_LOG",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        157.5868626910316,
+        -23.35,
+        -58.553486389377746
+      ],
+      "support": "RBX0000000000000000000000007000101E",
+      "trials": 3
+    },
+    {
+      "ref": "RBX00000000000000000000000070001642",
+      "action": "document",
+      "argument": "DOC_SHIP_POWER",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C06_Судовой_распределительный_пост/Document_DOC_SHIP_POWER",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        -77.5868626910316,
+        -23.35,
+        58.55348638937775
+      ],
+      "support": "RBX00000000000000000000000070001014",
+      "trials": 19
+    },
+    {
+      "ref": "RBX0000000000000000000000007000166F",
+      "action": "document",
+      "argument": "DOC_WATER_BALANCE",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C07_Водоподготовка_и_жизнеобеспечение/Document_DOC_WATER_BALANCE",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        -17.5868626910316,
+        -23.35,
+        58.55348638937775
+      ],
+      "support": "RBX00000000000000000000000070001017",
+      "trials": 19
+    },
+    {
+      "ref": "RBX0000000000000000000000007000169C",
+      "action": "document",
+      "argument": "DOC_ADMIN_INDEX",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C08_Дежурная_администрация/Document_DOC_ADMIN_INDEX",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        42.413137308968395,
+        -23.35,
+        58.55348638937775
+      ],
+      "support": "RBX00000000000000000000000070001019",
+      "trials": 19
+    },
+    {
+      "ref": "RBX000000000000000000000000700016C9",
+      "action": "document",
+      "argument": "DOC_BALLAST_LOG",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C09_Балластная_насосная/Document_DOC_BALLAST_LOG",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        112.4131373089684,
+        -23.35,
+        58.55348638937775
+      ],
+      "support": "RBX0000000000000000000000007000101C",
+      "trials": 19
+    },
+    {
+      "ref": "RBX000000000000000000000000700016F5",
+      "action": "document",
+      "argument": "DOC_OBSERVATION",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Connected_Crew_Deck_V11/C10_Пост_внешнего_наблюдения/Document_DOC_OBSERVATION",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        172.4131373089684,
+        -23.35,
+        58.55348638937775
+      ],
+      "support": "RBX0000000000000000000000007000101F",
+      "trials": 19
+    },
+    {
+      "ref": "RBX00000000000000000000000070001CAB",
+      "action": "npc",
+      "argument": "OPERATOR",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Crew_Rigs_V11/Staff_OPERATOR/Head",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        178.8,
+        -23.35,
+        -27.0
+      ],
+      "support": "RBX0000000000000000000000007000101F",
+      "trials": 1
+    },
+    {
+      "ref": "RBX00000000000000000000000070001CEA",
+      "action": "npc",
+      "argument": "ENGINEER",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Crew_Rigs_V11/Staff_ENGINEER/Head",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        -51.2,
+        -23.35,
+        29.0
+      ],
+      "support": "RBX00000000000000000000000070001015",
+      "trials": 1
+    },
+    {
+      "ref": "RBX00000000000000000000000070001D2D",
+      "action": "npc",
+      "argument": "SECURITY",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Crew_Rigs_V11/Staff_SECURITY/Head",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        116.8,
+        -23.35,
+        -27.0
+      ],
+      "support": "RBX0000000000000000000000007000101C",
+      "trials": 1
+    },
+    {
+      "ref": "RBX00000000000000000000000070001D6A",
+      "action": "npc",
+      "argument": "ARCHIVIST",
+      "path": "Workspace/PROJECT_NULL_ARCH_P01/Ocean_Complex_V11/Crew_Rigs_V11/Staff_ARCHIVIST/Head",
+      "reachable": true,
+      "floor": -28,
+      "head": [
+        66.8,
+        -23.35,
+        28.0
+      ],
+      "support": "RBX0000000000000000000000007000101A",
+      "trials": 1
+    }
+  ],
+  "service_sweeps": [
+    {
+      "panel": "RBX00000000000000000000000070000360",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000389",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700003B0",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000416",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000425",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700004B3",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700004F4",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000539",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000569",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700005A0",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700005AF",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700006BD",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000792",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007A1",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007BB",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007CC",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700007FB",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000080C",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000083D",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000877",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700008E7",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000923",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000935",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000959",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700009C3",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700009E5",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700009F5",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A10",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A2B",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A43",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A53",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000045",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000192",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000213",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000A72",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000AA6",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000AF4",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000B05",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000B32",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000B64",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000BC5",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000BEC",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000C1B",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000C4A",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000CC4",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D06",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D55",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D68",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000D7F",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000DB5",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000DF4",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070000E2C",
+      "legacy": true,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000119D",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700011B8",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700011DE",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700011FA",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001216",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001232",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001264",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001286",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700012A8",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700012E4",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001360",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001726",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000173B",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001750",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001765",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700017A8",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700017C0",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700017D8",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700017F0",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001826",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001843",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001869",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000188F",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700018B4",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700018F6",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001915",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX0000000000000000000000007000193B",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001961",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001986",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700019B7",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX000000000000000000000000700019E8",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001A10",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001A38",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001A60",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001A91",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001AB5",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001AFB",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001B1E",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001B60",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001BAB",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001BC7",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001BE0",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001BFC",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001C1C",
+      "legacy": false,
+      "collisions": 0
+    },
+    {
+      "panel": "RBX00000000000000000000000070001C39",
+      "legacy": false,
+      "collisions": 0
+    }
+  ],
+  "service_collision_candidates": [],
+  "rigs": [
+    {
+      "id": "TECH",
+      "model": "RBX00000000000000000000000070000151",
+      "joints": [
+        {
+          "name": "RootJoint",
+          "part0": "RBX00000000000000000000000070000152",
+          "part1": "RBX00000000000000000000000070000153"
+        },
+        {
+          "name": "Neck",
+          "part0": "RBX00000000000000000000000070000153",
+          "part1": "RBX00000000000000000000000070000154"
+        },
+        {
+          "name": "Left Shoulder",
+          "part0": "RBX00000000000000000000000070000153",
+          "part1": "RBX00000000000000000000000070000155"
+        },
+        {
+          "name": "Right Shoulder",
+          "part0": "RBX00000000000000000000000070000153",
+          "part1": "RBX00000000000000000000000070000156"
+        },
+        {
+          "name": "Left Hip",
+          "part0": "RBX00000000000000000000000070000153",
+          "part1": "RBX00000000000000000000000070000157"
+        },
+        {
+          "name": "Right Hip",
+          "part0": "RBX00000000000000000000000070000153",
+          "part1": "RBX00000000000000000000000070000158"
+        }
+      ],
+      "connected_body_parts": 7,
+      "connected_wardrobe_and_body_parts": 24
+    },
+    {
+      "id": "MEDIC",
+      "model": "RBX00000000000000000000000070000AC9",
+      "joints": [
+        {
+          "name": "RootJoint",
+          "part0": "RBX00000000000000000000000070000ACA",
+          "part1": "RBX00000000000000000000000070000ACB"
+        },
+        {
+          "name": "Neck",
+          "part0": "RBX00000000000000000000000070000ACB",
+          "part1": "RBX00000000000000000000000070000ACC"
+        },
+        {
+          "name": "Left Shoulder",
+          "part0": "RBX00000000000000000000000070000ACB",
+          "part1": "RBX00000000000000000000000070000ACD"
+        },
+        {
+          "name": "Right Shoulder",
+          "part0": "RBX00000000000000000000000070000ACB",
+          "part1": "RBX00000000000000000000000070000ACE"
+        },
+        {
+          "name": "Left Hip",
+          "part0": "RBX00000000000000000000000070000ACB",
+          "part1": "RBX00000000000000000000000070000ACF"
+        },
+        {
+          "name": "Right Hip",
+          "part0": "RBX00000000000000000000000070000ACB",
+          "part1": "RBX00000000000000000000000070000AD0"
+        }
+      ],
+      "connected_body_parts": 7,
+      "connected_wardrobe_and_body_parts": 25
+    },
+    {
+      "id": "OPERATOR",
+      "model": "RBX00000000000000000000000070001CA8",
+      "joints": [
+        {
+          "name": "RootJoint",
+          "part0": "RBX00000000000000000000000070001CA9",
+          "part1": "RBX00000000000000000000000070001CAA"
+        },
+        {
+          "name": "Neck",
+          "part0": "RBX00000000000000000000000070001CAA",
+          "part1": "RBX00000000000000000000000070001CAB"
+        },
+        {
+          "name": "Left Shoulder",
+          "part0": "RBX00000000000000000000000070001CAA",
+          "part1": "RBX00000000000000000000000070001CAC"
+        },
+        {
+          "name": "Right Shoulder",
+          "part0": "RBX00000000000000000000000070001CAA",
+          "part1": "RBX00000000000000000000000070001CAD"
+        },
+        {
+          "name": "Left Hip",
+          "part0": "RBX00000000000000000000000070001CAA",
+          "part1": "RBX00000000000000000000000070001CAE"
+        },
+        {
+          "name": "Right Hip",
+          "part0": "RBX00000000000000000000000070001CAA",
+          "part1": "RBX00000000000000000000000070001CAF"
+        }
+      ],
+      "connected_body_parts": 7,
+      "connected_wardrobe_and_body_parts": 22
+    },
+    {
+      "id": "ENGINEER",
+      "model": "RBX00000000000000000000000070001CE7",
+      "joints": [
+        {
+          "name": "RootJoint",
+          "part0": "RBX00000000000000000000000070001CE8",
+          "part1": "RBX00000000000000000000000070001CE9"
+        },
+        {
+          "name": "Neck",
+          "part0": "RBX00000000000000000000000070001CE9",
+          "part1": "RBX00000000000000000000000070001CEA"
+        },
+        {
+          "name": "Left Shoulder",
+          "part0": "RBX00000000000000000000000070001CE9",
+          "part1": "RBX00000000000000000000000070001CEB"
+        },
+        {
+          "name": "Right Shoulder",
+          "part0": "RBX00000000000000000000000070001CE9",
+          "part1": "RBX00000000000000000000000070001CEC"
+        },
+        {
+          "name": "Left Hip",
+          "part0": "RBX00000000000000000000000070001CE9",
+          "part1": "RBX00000000000000000000000070001CED"
+        },
+        {
+          "name": "Right Hip",
+          "part0": "RBX00000000000000000000000070001CE9",
+          "part1": "RBX00000000000000000000000070001CEE"
+        }
+      ],
+      "connected_body_parts": 7,
+      "connected_wardrobe_and_body_parts": 24
+    },
+    {
+      "id": "SECURITY",
+      "model": "RBX00000000000000000000000070001D2A",
+      "joints": [
+        {
+          "name": "RootJoint",
+          "part0": "RBX00000000000000000000000070001D2B",
+          "part1": "RBX00000000000000000000000070001D2C"
+        },
+        {
+          "name": "Neck",
+          "part0": "RBX00000000000000000000000070001D2C",
+          "part1": "RBX00000000000000000000000070001D2D"
+        },
+        {
+          "name": "Left Shoulder",
+          "part0": "RBX00000000000000000000000070001D2C",
+          "part1": "RBX00000000000000000000000070001D2E"
+        },
+        {
+          "name": "Right Shoulder",
+          "part0": "RBX00000000000000000000000070001D2C",
+          "part1": "RBX00000000000000000000000070001D2F"
+        },
+        {
+          "name": "Left Hip",
+          "part0": "RBX00000000000000000000000070001D2C",
+          "part1": "RBX00000000000000000000000070001D30"
+        },
+        {
+          "name": "Right Hip",
+          "part0": "RBX00000000000000000000000070001D2C",
+          "part1": "RBX00000000000000000000000070001D31"
+        }
+      ],
+      "connected_body_parts": 7,
+      "connected_wardrobe_and_body_parts": 21
+    },
+    {
+      "id": "ARCHIVIST",
+      "model": "RBX00000000000000000000000070001D67",
+      "joints": [
+        {
+          "name": "RootJoint",
+          "part0": "RBX00000000000000000000000070001D68",
+          "part1": "RBX00000000000000000000000070001D69"
+        },
+        {
+          "name": "Neck",
+          "part0": "RBX00000000000000000000000070001D69",
+          "part1": "RBX00000000000000000000000070001D6A"
+        },
+        {
+          "name": "Left Shoulder",
+          "part0": "RBX00000000000000000000000070001D69",
+          "part1": "RBX00000000000000000000000070001D6B"
+        },
+        {
+          "name": "Right Shoulder",
+          "part0": "RBX00000000000000000000000070001D69",
+          "part1": "RBX00000000000000000000000070001D6C"
+        },
+        {
+          "name": "Left Hip",
+          "part0": "RBX00000000000000000000000070001D69",
+          "part1": "RBX00000000000000000000000070001D6D"
+        },
+        {
+          "name": "Right Hip",
+          "part0": "RBX00000000000000000000000070001D69",
+          "part1": "RBX00000000000000000000000070001D6E"
+        }
+      ],
+      "connected_body_parts": 7,
+      "connected_wardrobe_and_body_parts": 23
+    }
+  ],
+  "runtime_sources": [
+    {
+      "name": "ProjectNullServer_V10",
+      "ref": "RBX00000000000000000000000070000E5F",
+      "sha256": "e3d66beb1983a6842417ca396a6868721c5629e6d51fc1b748a6694cd21f81f5"
+    },
+    {
+      "name": "ProjectNullClient_V10",
+      "ref": "RBX00000000000000000000000070000E65",
+      "sha256": "eadf001aeeefe913fa656d956a8aacb062e1ebae39fbc3ee18f8c9fcc770535e"
+    },
+    {
+      "name": "Content",
+      "ref": "RBX00000000000000000000000070000E5E",
+      "sha256": "836bc004d08d0b0f55e444a067e11ddd449dfd1df33c619a8c3d15a3dafd25d6"
+    },
+    {
+      "name": "Dialogue",
+      "ref": "RBX00000000000000000000000070001DA8",
+      "sha256": "a7d1ff65eaa9fb11a1e9b81b25bb0ea9c64953b4a95dafdcc79049d50ace9125"
+    },
+    {
+      "name": "NPCDirector",
+      "ref": "RBX00000000000000000000000070001DA9",
+      "sha256": "db9e87954298e52d73eefd9843d1c608fb644f0d35c2cd0d965bcad248f3d107"
+    },
+    {
+      "name": "OceanEnvironment",
+      "ref": "RBX00000000000000000000000070001DAA",
+      "sha256": "aceda56b2737eb913777d943c974bcca5f71d51e323925ec03879ff8e7e227d5"
+    },
+    {
+      "name": "ShipConfig",
+      "ref": "RBX00000000000000000000000070001DAB",
+      "sha256": "c29fd36b15af81528c434f356e0be74e91cfa0bc0a1dd4137ea150635196b538"
+    },
+    {
+      "name": "WorldConfig",
+      "ref": "RBX00000000000000000000000070001DAC",
+      "sha256": "678a7f82b5b1f7e655c59cd56d1b328bcc25c485413d6a3b431c9741f4c6239e"
+    }
+  ],
+  "document_count": 29,
+  "errors": [],
+  "warnings": [],
+  "limitations": [
+    "No Roblox avatar, navigation, animation replication, rendering, ocean voxel or live DataStore test.",
+    "Finite standing/ray samples establish local access, not a full navigation mesh.",
+    "Nine sampled cover poses and oriented bounds are conservative approximations."
+  ]
+}

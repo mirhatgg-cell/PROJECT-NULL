@@ -30,8 +30,14 @@ def python_value(value):
 def fixture(preload: str | None = None):
     lua = LuaRuntime(unpack_returned_tuples=True)
     lua.execute((ROOT / "tools/v10_runtime_mock.lua").read_text())
-    lua.globals()._content = lua_value(lua, json.loads((ROOT / "tools/v10_content.json").read_text()))
+    content_path = ROOT / "tools/v11_content.json"
+    if not content_path.exists():
+        content_path = ROOT / "tools/v10_content.json"
+    lua.globals()._content = lua_value(lua, json.loads(content_path.read_text()))
     lua.globals()._engine = lua.execute((ROOT / "src/ExperimentCore_V10.luau").read_text())
+    dialogue_path = ROOT / "src/Dialogue_V11.luau"
+    if dialogue_path.exists():
+        lua.globals()._dialogue = lua.execute(dialogue_path.read_text())
     # Observe actual state created by the real constructor; no transition is mocked.
     lua.execute("local new=_engine.new;_engine.new=function(...) _engineState=new(...);return _engineState end")
     if preload:

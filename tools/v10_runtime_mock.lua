@@ -209,10 +209,43 @@ _request=new("RemoteEvent",_network,"Request");_push=new("RemoteEvent",_network,
 _scriptFolder=new("Folder",_services.ServerScriptService,"ProjectNullV10")
 _coreModule=new("ModuleScript",_scriptFolder,"ExperimentCore")
 _contentModule=new("ModuleScript",_scriptFolder,"Content")
+_dialogueModule=new("ModuleScript",_scriptFolder,"Dialogue")
+_directorModule=new("ModuleScript",_scriptFolder,"NPCDirector")
+_oceanModule=new("ModuleScript",_scriptFolder,"OceanEnvironment")
+_shipModule=new("ModuleScript",_scriptFolder,"ShipConfig")
+_environmentCalls={setup=0,destroy=0}
+_ocean={setup=function(config)
+    assert(type(config)=="table")
+    _environmentCalls.setup=_environmentCalls.setup+1
+    return {destroy=function() _environmentCalls.destroy=_environmentCalls.destroy+1 end}
+end}
+_shipConfig={}
+-- The independent NPC test executes the real director. Server integration
+-- deliberately spies on this dependency, so it can verify lifecycle wiring
+-- without pretending to simulate navigation or articulated physics.
+_directorCalls={new=0,step=0,talk={},destroy=0}
+_director={new=function(facility)
+    assert(facility==_facility,"Director received the wrong facility")
+    _directorCalls.new=_directorCalls.new+1
+    return {
+        step=function(_,dt,snapshot)
+            assert(type(dt)=="number" and type(snapshot)=="table")
+            _directorCalls.step=_directorCalls.step+1
+        end,
+        talk=function(_,id,player,active)
+            table.insert(_directorCalls.talk,{id=id,player=player,active=active})
+        end,
+        destroy=function() _directorCalls.destroy=_directorCalls.destroy+1 end,
+    }
+end}
 script=new("Script",_scriptFolder,"ProjectNullServer_V10")
 require=function(module)
     if module==_coreModule then return _engine end
     if module==_contentModule then return _content end
+    if module==_dialogueModule then return _dialogue end
+    if module==_directorModule then return _director end
+    if module==_oceanModule then return _ocean end
+    if module==_shipModule then return _shipConfig end
     error("Unknown require")
 end
 function fixture_player(id)
